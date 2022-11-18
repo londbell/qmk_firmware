@@ -75,3 +75,9 @@
 #    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
 
 #endif
+
+// #    ifdef VIA_ENABLE
+// #       define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 3
+// #       define DYNAMIC_KEYMAP_LAYER_COUNT 8
+// #       define FEE_PAGE_COUNT 4
+// #    endif
