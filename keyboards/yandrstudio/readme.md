@@ -98,7 +98,7 @@ A creative coder.
 | keit75          | 0xAA96    | 0xAA69     | F103, RGB                        | &check;           |
 | star80          | 0xAA96    | 0xAA6B     | F103, RGB, Hotswap, TFT Screen   | &check;           |
 | uc65s           | 0xAA96    | 0xAA6C     | BLE, Hotswap, RGB,               | &check;           |
-| transition      | 0xAA96    | 0xAA70     | F103, RGB, Hotswap               | &check;           |
+| transition80    | 0xAA96    | 0xAA70     | F103, RGB, Hotswap               | &check;           |
 | meteor80        | 0xAA96    | 0xAA71     | F103, RGB, Hotswap, Partially    | &check;           |
 | n66ble          | 0xAA96    | 0xAA72     | BLE, Hotswap, RGB, Audio         | &check;           |
 
