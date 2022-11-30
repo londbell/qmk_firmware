@@ -432,10 +432,14 @@ void rgb_matrix_task(void) {
             break;
         case RENDERING:
             rgb_task_render(effect);
+#ifndef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
             if (effect) {
+#endif
                 rgb_matrix_indicators();
                 rgb_matrix_indicators_advanced(&rgb_effect_params);
+#ifndef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
             }
+#endif
             break;
         case FLUSHING:
             rgb_task_flush(effect);
