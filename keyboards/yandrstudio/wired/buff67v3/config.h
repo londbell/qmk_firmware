@@ -21,8 +21,10 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA88
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    BUFF_Y&R
-#define PRODUCT         buff67v3
+#define MANUFACTURER    ROSE_Y&R
+// #define MANUFACTURER    BUFF_Y&R
+#define PRODUCT         Rose65
+// #define PRODUCT         buff67v3
 
 /* key matrix size */
 #define MATRIX_ROWS 5

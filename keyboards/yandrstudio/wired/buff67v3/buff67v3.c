@@ -15,18 +15,11 @@
  */
 #include "buff67v3.h"
 
-
 #ifdef RGBLIGHT_ENABLE
 
+const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_RED});
 
-
-const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_RED}
-);
-
-const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    my_capslock_layer
-);
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(my_capslock_layer);
 
 bool led_update_kb(led_t led_state) {
     rgblight_set_layer_state(0, led_state.caps_lock);
@@ -40,11 +33,16 @@ void keyboard_post_init_kb(void) {
 
 #endif
 
-bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    switch(keycode) {
+bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
+    if (!process_record_user(keycode, record)) {
+        return false;
+    }
+    switch (keycode) {
         case LOCK_GUI:
         case KC_F23:
-            process_magic(GUI_TOG, record);
+            if (record->event.pressed) {
+                process_magic(GUI_TOG, record);
+            }
             return false;
         default:
             return true;
