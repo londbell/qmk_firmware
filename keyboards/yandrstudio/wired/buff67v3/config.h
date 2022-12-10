@@ -21,9 +21,10 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA88
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    ROSE_Y&R
+#define MANUFACTURER    Y&R
 // #define MANUFACTURER    BUFF_Y&R
-#define PRODUCT         Rose65
+#define PRODUCT         Luck65
+// #define PRODUCT         Rose65
 // #define PRODUCT         buff67v3
 
 /* key matrix size */
@@ -31,7 +32,8 @@
 #define MATRIX_COLS 15
 
 //                         0    1    2    3    4    5    6    7    8    9    10   11   12   13   14
-#define MATRIX_COL_PINS {  B5,  B6,  B7,  B8,  B9,  C13, C14, B0,  B1,  B2,  B10, B11, B12, A15, B3 }
+// #define MATRIX_COL_PINS {  B5,  B6,  B7,  B8,  B9,  C13, C14, B0,  B1,  B2,  B10, B11, B12, A15, B3 }
+#define MATRIX_COL_PINS {  B5,  B6,  B7,  B8,  B9,  C13, C14, B0,  B1,  B2,  B10, B11, B12, A15, B4 }
 #define MATRIX_ROW_PINS {  A3,  A4,  A5,  A7,  C15 }
 
 /* COL2ROW or ROW2COL */
@@ -42,7 +44,8 @@
 
 #ifdef RGBLIGHT_ENABLE
 
-#    define RGB_DI_PIN B4
+// #    define RGB_DI_PIN B4
+#    define RGB_DI_PIN B3
 #    define RGBLED_NUM 1
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_SLEEP
