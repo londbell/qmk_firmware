@@ -102,7 +102,7 @@ A creative coder.
 | meteor80        | 0xAA96    | 0xAA71                   | F103, RGB, Hotswap, Partially    | &check;           |
 | n66ble          | 0xAA96    | 0xAA72                   | BLE, Hotswap, RGB, Audio         | &check;           |
 | rose65          | 0xAA96    | 0xAA74(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
-| noname75        | 0xAA96    | 0xAA75                   | F103, Hotswap                    | &check;           |
+| noname75        | 0xAA96    | 0xAA75                   | F103, RGB, Hotswap               | &check;           |
 | luck65          | 0xAA96    | 0xAA6D                   | F103, RGB, Hotswap               | &check;           |
 
 
