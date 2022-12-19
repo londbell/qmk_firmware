@@ -21,7 +21,7 @@
 #define PRODUCT_ID      0xAAEB
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    EAU_Y&R
-#define PRODUCT         eau87
+#define PRODUCT         Hercules80
 
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
