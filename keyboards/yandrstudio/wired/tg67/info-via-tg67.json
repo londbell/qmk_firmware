@@ -2,8 +2,8 @@
     "name": "TG67_Y&R",
     "vendorId": "0xAA96",
     "productId": "0xAA8D",
-    "keycodes": ["qmk_rgb_matrix"],
-    "menus": ["qmk_rgblight"],
+    "keycodes": ["qmk_lighting"],
+    "menus": ["qmk_rgb_matrix"],
     "matrix": {
         "rows": 5,
         "cols": 15
