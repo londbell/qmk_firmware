@@ -66,11 +66,6 @@ void keyboard_post_init_kb(void) {
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_user(keycode, record)) { return false; }
     switch(keycode) {
-        case KC_Z:
-            if (record->event.pressed) {
-                rgb_matrix_adv_blink_layer_repeat(1, 500, 6);
-            }
-            return true;
         case LOCK_GUI:
             if (record->event.pressed) {
                 process_magic(GUI_TOG, record);
