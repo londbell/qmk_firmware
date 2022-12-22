@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA8D
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    TG_Y&R
-#define PRODUCT         tg67
+#define MANUFACTURER    "TG_Y&R"
+#define PRODUCT         "tg67"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -49,8 +49,7 @@
 #ifdef RGB_MATRIX_ENABLE
 
 #    define RGB_DI_PIN A7
-#    define RGBLED_NUM 69
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT 69
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 250
 #    define RGBLIGHT_VAL_STEP 5
