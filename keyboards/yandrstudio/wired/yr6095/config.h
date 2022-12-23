@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA0C
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    LKAILL_Y&R
-#define PRODUCT         YR6095
+#define MANUFACTURER    "LKAILL_Y&R"
+#define PRODUCT         "YR6095"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -35,17 +35,7 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-#define TAP_CODE_DELAY 15
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
+#define TAP_HOLD_CAPS_DELAY 250
 
 #ifdef RGBLIGHT_ENABLE
 
