@@ -2,7 +2,8 @@
     "name": "YR6095_Y&R",
     "vendorId": "0xAA96",
     "productId": "0xAA0C",
-    "lighting": "qmk_rgblight",
+    "keycodes": ["qmk_lighting"],
+    "menus": ["qmk_rgblight"],
     "customKeycodes": [
         {
             "name": "Toggle WinKey Lock",
