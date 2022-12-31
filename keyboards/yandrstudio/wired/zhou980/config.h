@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAACE
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    zhou_y&r
-#define PRODUCT         zhou980
+#define MANUFACTURER    "zhou_y&r"
+#define PRODUCT         "zhou980"
 
 /* key matrix size */
 #define MATRIX_COLS 19
@@ -44,8 +44,19 @@
 #    define RGBLED_NUM 4
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_LIMIT_VAL 180
-#    define RGBLIGHT_ANIMATIONS
 #    define RGBLIGHT_SLEEP
+
+#    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#    define RGBLIGHT_EFFECT_SNAKE
+#    define RGBLIGHT_EFFECT_KNIGHT
+#    define RGBLIGHT_EFFECT_CHRISTMAS
+#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#    define RGBLIGHT_EFFECT_RGB_TEST
+#    define RGBLIGHT_EFFECT_ALTERNATING
+#    define RGBLIGHT_EFFECT_TWINKLE
+#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
 
 #endif
 
