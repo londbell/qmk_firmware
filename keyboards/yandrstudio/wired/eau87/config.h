@@ -20,8 +20,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAAEB
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    EAU_Y&R
-#define PRODUCT         Hercules80
+#define MANUFACTURER    "CHOSERA_Y&R"
+#define PRODUCT         "Hercules80"
 
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
@@ -33,3 +33,5 @@
 #define DEBOUNCE 5
 
 #define TAP_CODE_DELAY 15
+
+#define TAP_HOLD_CAPS_DELAY 250
