@@ -17,6 +17,6 @@
 
 void keyboard_post_init_kb(void) {
 #   ifdef RGBLIGHT_ENABLE
-    rgblight_reload_from_eeprom();
+    rgblight_set();
 #   endif
 }

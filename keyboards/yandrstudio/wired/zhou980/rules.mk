@@ -12,3 +12,6 @@ NKRO_ENABLE = yes           # USB Nkey Rollover
 RGBLIGHT_ENABLE = yes
 RGBLIGHT_DRIVER = WS2812
 # WS2812_DRIVER = pwm
+
+CUSTOM_MATRIX = lite
+QUANTUM_SRC += matrix.c
