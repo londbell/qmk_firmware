@@ -26,6 +26,8 @@ A creative coder.
 | yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &check;           |
 | yr6095        | 0xAA96    | 0xAA0C     | F103                                  | &check;           |
 | yr80          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
+| ps64ble       | 0xAA96    | 0xAA0E     | BLE 5.0 Dual mode,RGB                 | &check;           |
+
 
 ### Keyboards Completed with Y&R Studio Participation
 
