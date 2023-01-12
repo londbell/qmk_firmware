@@ -19,9 +19,9 @@
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA71
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    DaXing_Y&R_FIXED
-#define PRODUCT         meteor80
+#define DEVICE_VER      0x0002
+#define MANUFACTURER    "DaXing_Y&R_FIXED"
+#define PRODUCT         "meteor80"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -31,7 +31,6 @@
 #define DIODE_DIRECTION COL2ROW
 
 //                        0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16
-// #define MATRIX_COL_PINS { B3, A15,  B4,  B5,  B6,  B7,  B8,  A6,  A7,  B0,  B12, B13, B14, B1,  B15, A8,  A9 }
 #define MATRIX_COL_PINS { A15, B3,  B4,  B5,  B6,  B7,  B8,  A6,  A7,  B0,  B12, B13, B14, B1,  B15, A8,  A9 } // mistake
 #define MATRIX_ROW_PINS { C13, C15, C14, A4,  A5,  B9 }
 
@@ -40,6 +39,7 @@
 
 #define TAP_CODE_DELAY 15
 
+#define TAP_HOLD_CAPS_DELAY 250
 
 #ifdef RGBLIGHT_ENABLE
 
