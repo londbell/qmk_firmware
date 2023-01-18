@@ -9,8 +9,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA8D
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Y&R
-#define PRODUCT         tg67_trgbml
+#define MANUFACTURER    "Y&R"
+#define PRODUCT         "tg67_trgbml"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -27,8 +27,7 @@
 #ifdef RGB_MATRIX_ENABLE
 
 #    define RGB_DI_PIN A7
-#    define RGBLED_NUM 69
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT 69
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 250
 #    define RGBLIGHT_VAL_STEP 5
@@ -88,7 +87,7 @@
 #    define RGB_MATRIX_LAYER_BLINK
 #    define RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
 #    define RGB_MATRIX_LAYERS_RETAIN_VAL
-#    define RGB_MATRIX_MAX_LAYERS 10
+#    define RGB_MATRIX_MAX_LAYERS 2
 
 #endif
 

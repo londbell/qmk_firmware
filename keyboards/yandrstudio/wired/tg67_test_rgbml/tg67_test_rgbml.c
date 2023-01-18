@@ -2,10 +2,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "tg67_test_rgbml.h"
-#include "rgb_matrix_layer.h"
 
 #ifdef RGB_MATRIX_ENABLE
-void rgb_matrix_update_pwm_buffers(void);
+
+#include "rgb_matrix_layer.h"
+
+extern rgb_task_states rgb_task_state;
 
 led_config_t g_led_config = {
     {
@@ -48,13 +50,17 @@ const rgb_matrix_adv_layer_segment_t* const PROGMEM my_rgb_matrix_layers[] = RGB
     my_z_layer
 );
 
-void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
     rgb_matrix_adv_blink_layer_repeat_helper();
     rgb_matrix_adv_set_layer_state(0, host_keyboard_led_state().caps_lock);
     // If not enabled, then nothing else will actually set the LEDs...
     if (!rgb_matrix_is_enabled()) {
-        rgb_matrix_update_pwm_buffers();
+        rgb_task_state = FLUSHING;
     }
+    return true;
 }
 
 void keyboard_post_init_kb(void) {
