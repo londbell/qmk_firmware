@@ -4,24 +4,47 @@
 #include "rgb_matrix_layer.h"
 #include "rgb_matrix.h"
 #include "color.h"
+#include <stdlib.h>
 
 rgb_matrix_adv_layers_mask_t                 rgb_matrix_adv_enabled_layer_mask = 0;
 rgb_matrix_adv_layer_segment_t const *const *rgb_matrix_layers                 = NULL;
 
+#ifdef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
+uint8_t layer_off2on_idx[RGB_MATRIX_MAX_LAYERS+2];
+#endif
+
 void rgb_matrix_adv_layers_write(void) {
     uint8_t i = 0;
+#ifdef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
+    uint8_t offi = 0, oni = RGB_MATRIX_MAX_LAYERS-1;
+    for (i = 0; i < RGB_MATRIX_MAX_LAYERS; i++) {
+        if ((rgb_matrix_adv_enabled_layer_mask & (1 << i)) == 0) {
+            layer_off2on_idx[offi++] = i;
+        } else {
+            layer_off2on_idx[oni--] = i;
+        }
+    }
+#endif
+#ifdef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
+    // For each layer
+    for (i = 0; i < RGB_MATRIX_MAX_LAYERS; i++) {
+        // if this led has been set color with layer on, not set it
+        // so we should process off layer first to avoid overwrite the led of lower rgb matrix layer that is on
+        bool off_flag = false;
+        if ((rgb_matrix_adv_enabled_layer_mask & (1 << layer_off2on_idx[i])) == 0) {
+            if (!rgb_matrix_is_enabled()) off_flag = true;
+            else continue;
+        }
+        const rgb_matrix_adv_layer_segment_t *segment_ptr = pgm_read_ptr(rgb_matrix_layers+layer_off2on_idx[i]);
+#else
+    i = 0;
     // For each layer
     for (const rgb_matrix_adv_layer_segment_t *const *layer_ptr = rgb_matrix_layers; i < RGB_MATRIX_MAX_LAYERS; layer_ptr++, i++) {
-        bool off_flag = false;
         if ((rgb_matrix_adv_enabled_layer_mask & (1 << i)) == 0) {
-#ifdef RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
-            if (!rgb_matrix_is_enabled())
-                off_flag = true;
-            else
-#endif
                 continue; // Layer is disabled
         }
         const rgb_matrix_adv_layer_segment_t *segment_ptr = pgm_read_ptr(layer_ptr);
+#endif
         if (segment_ptr == NULL) {
             break; // No more layers
         }
