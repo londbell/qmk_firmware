@@ -23,15 +23,4 @@
 #define MANUFACTURER    "CHOSERA_Y&R"
 #define PRODUCT         "Hercules80"
 
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
-#define TAP_CODE_DELAY 15
-
 #define TAP_HOLD_CAPS_DELAY 250
