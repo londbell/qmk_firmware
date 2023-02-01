@@ -59,6 +59,11 @@
             "shortName": "WinLock"
         },
         {
+            "name": "Toggle Key/Under RGB",
+            "title": "Toggle Key/Under RGB",
+            "shortName": "RGB_K_U"
+        },
+        {
             "name": "Toggle macOS Keymap",
             "title": "Toggle macOS Keymap",
             "shortName": "TogMacOS"

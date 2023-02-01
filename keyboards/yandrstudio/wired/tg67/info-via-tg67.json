@@ -4,6 +4,28 @@
     "productId": "0xAA8D",
     "keycodes": ["qmk_lighting"],
     "menus": ["qmk_rgb_matrix"],
+    "customKeycodes": [
+        {
+            "name": "Toggle WinKey Lock",
+            "title": "Toggle WinKey Lock",
+            "shortName": "WinLock"
+        },
+        {
+            "name": "Toggle macOS Keymap",
+            "title": "Toggle macOS Keymap",
+            "shortName": "TogMacOS"
+        },
+        {
+            "name": "Mission Control",
+            "title": "Mission Control in macOS",
+            "shortName": "Mission Control"
+        },
+        {
+            "name": "Launch Pad",
+            "title": "Launch Pad in macOS",
+            "shortName": "Launch Pad"
+        }
+    ],
     "matrix": {
         "rows": 5,
         "cols": 15
