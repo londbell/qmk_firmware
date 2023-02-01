@@ -22,7 +22,7 @@
 #define PRODUCT_ID      0xAA8D
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "TG_Y&R"
-#define PRODUCT         "tg67"
+#define PRODUCT         "Enter67"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -34,16 +34,7 @@
 #define MATRIX_COL_PINS {  B2,  B10, B11, A8,  A9,  A10, B5,  A15, B3,  A2,  A3,  B4,  A4,  A5,  A6 }
 #define MATRIX_ROW_PINS {  B0,  B6,  B1,  B7,  A1 }
 
-#define TAP_CODE_DELAY 15
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define TAP_HOLD_CAPS_DELAY 250
 
 /* RGB Matrix */
 #ifdef RGB_MATRIX_ENABLE
@@ -51,7 +42,7 @@
 #    define RGB_DI_PIN A7
 #    define RGB_MATRIX_LED_COUNT 69
 
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 250
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #    define RGBLIGHT_VAL_STEP 5
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_CENTER { 112, 32 }
