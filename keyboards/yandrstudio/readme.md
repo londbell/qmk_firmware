@@ -107,6 +107,9 @@ A creative coder.
 | rose65          | 0xAA96    | 0xAA74(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
 | noname75        | 0xAA96    | 0xAA75                   | F103, RGB, Hotswap               | &check;           |
 | luck65          | 0xAA96    | 0xAA6D                   | F103, RGB, Hotswap               | &check;           |
+| meet            | 0xAA96    | 0xAA6E                   | BLE,  RGB, Hotswap, Alice        | &check;           |
+| sueno69         | 0xAA96    | 0xAA76                   | F103, RGB, Hotswap, Tian68       | &check;           |
+
 
 
 
