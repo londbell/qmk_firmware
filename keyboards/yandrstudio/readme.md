@@ -111,10 +111,6 @@ A creative coder.
 | sueno69         | 0xAA96    | 0xAA76                   | F103, RGB, Hotswap, Tian68       | &check;           |
 
 
-
-
-
-
 ### Obsolete or Test keyboard for reference design only
 
 | NAME      | VENDOR_ID | PRODUCT_ID | FEATURES                      | COMMERCIALIZATION |
