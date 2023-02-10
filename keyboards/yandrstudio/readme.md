@@ -110,6 +110,7 @@ A creative coder.
 | meet            | 0xAA96    | 0xAA6E                   | BLE,  RGB, Hotswap, Alice        | &check;           |
 | sueno69         | 0xAA96    | 0xAA76                   | F103, RGB, Hotswap, Tian68       | &check;           |
 | ckw80(v2)       | 0xAA96    | 0xAA77                   | BLE,  RGB, Hotswap               | &check;           |
+| prime75         | 0xAA96    | 0xAA78                   | F103, RGB, Hotswap               | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
