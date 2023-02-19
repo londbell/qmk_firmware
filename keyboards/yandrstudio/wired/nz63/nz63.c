@@ -26,11 +26,11 @@ kb_cums_t kb_cums;
 
 led_config_t g_led_config = {
     {
-        {62,  61,  60,  59,  58,  57,  56,  55,  54,  53,  52,  51,  50,  49},\
-        {48,  47,  46,  45,  44,  43,  42,  41,  40,  39,  38,  37,  36,  35},\
-        {34,  33,  32,  31,  30,  29,  28,  27,  26,  25,  24,  23,   NO_LED,  22},\
-        {21,  20,  19,  18,  17,  16,  15,  14,  13,  12,  11,   NO_LED,  10,  9},\
-        {8,  7,  6,   NO_LED,   NO_LED,  5,   NO_LED,   NO_LED,   NO_LED,  4,  3,  2,  1,  0}\
+        {64,  63,  62,  61,  60,  59,  58,  57,  56,  55,  54,  53,  52,  51},\
+        {50,  49,  48,  47,  46,  45,  44,  43,  42,  41,  40,  39,  38,  37},\
+        {36,  35,  34,  33,  32,  31,  30,  29,  28,  27,  26,  25,   NO_LED,  24},\
+        {23,  22,  21,  20,  19,  18,  17,  16,  15,  14,  13,   NO_LED,  12,  11},\
+        {10,  9,  8,   NO_LED,   NO_LED,  6,   NO_LED,   NO_LED,   NO_LED,  4,  3,  2,  1,  0}\
     },
     {
       // LED Index to Physical Position
@@ -58,7 +58,10 @@ led_config_t g_led_config = {
     }
 };
 
-void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
     if (rgb_matrix_is_enabled()) {
         if (kb_cums.underground_rgb_sw == 1) {
             for (uint8_t i = led_min; i < led_max; ++i) {
@@ -76,6 +79,7 @@ void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     } else {
         rgb_matrix_set_color_all(0,0,0);
     }
+    return true;
 }
 
 void eeconfig_init_kb(void) {

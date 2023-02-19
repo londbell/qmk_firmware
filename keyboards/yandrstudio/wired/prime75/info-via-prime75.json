@@ -1,7 +1,7 @@
 {
     "name": "Prime75_Y&R",
     "vendorId": "0xAA96",
-    "productId": "0xAA78",
+    "productId": "0xAA7A",
     "keycodes": [
         "qmk_lighting"
     ],
