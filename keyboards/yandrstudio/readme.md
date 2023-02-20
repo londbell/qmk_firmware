@@ -113,6 +113,7 @@ A creative coder.
 | id87            | 0xAA96    | 0xAA78                   | BLE,  RGB, Hotswap               | &check;           |
 | tg67ble         | 0xAA96    | 0xAA79                   | BLE,  RGB, Hotswap               | &check;           |
 | prime75         | 0xAA96    | 0xAA7A                   | F103, RGB, Hotswap               | &check;           |
+| dbp75           | 0xAA96    | 0xAA7B                   | F103, RGB, Hotswap, TFT Screen   | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
