@@ -114,6 +114,8 @@ A creative coder.
 | tg67ble         | 0xAA96    | 0xAA79                   | BLE,  RGB, Hotswap               | &check;           |
 | prime75         | 0xAA96    | 0xAA7A                   | F103, RGB, Hotswap               | &check;           |
 | dbp75           | 0xAA96    | 0xAA7B                   | F103, RGB, Hotswap, TFT Screen   | &check;           |
+| mu80            | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split left   | &check;           |
+| mu80pad         | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split right  | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
