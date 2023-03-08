@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include "config_common.h"
-
 /* RGB Matrix */
 #ifdef RGB_MATRIX_ENABLE
 #   define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
