@@ -80,11 +80,14 @@ A creative coder.
 | rita65r2        | 0xAA96    | 0xAA86                   | F103, RGB                        | &check;           |
 | nightstar75     | 0xAA96    | 0xAA87                   | F103, RGB                        | &check;           |
 | buff67v3        | 0xAA96    | 0xAA88                   | F103, RGB                        | &check;           |
+| rose65          | 0xAA96    | 0xAA74(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
+| luck65          | 0xAA96    | 0xAA6D(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
 | dome65          | 0xAA96    | 0xAA89                   | BLE                              | &cross;           |
 | soul70          | 0xAA96    | 0xAA8A                   | BLE                              | &check;           |
 | nz67ble         | 0xAA96    | 0xAA8B                   | BLE                              | &check;           |
 | whitemouse69v2  | 0xAA96    | 0xAA8C                   | F103, RGB                        | &check;           |
 | tg67            | 0xAA96    | 0xAA8D                   | F103, RGB                        | &check;           |
+| enter67         | 0xAA96    | 0xAA73(shadow of 0xAA8D) | F103, RGB                        | &check;           |
 | wave75          | 0xAA96    | 0xAA8E                   | F103                             | &check;           |
 | ID96            | 0xAA96    | 0xAA8F                   | F103, RGB                        | &quest;           |
 | ID68            | 0xAA96    | 0xAA60                   | F103, RGB                        | &quest;           |
@@ -104,10 +107,8 @@ A creative coder.
 | transition80    | 0xAA96    | 0xAA6F                   | F103, RGB, Hotswap               | &check;           |
 | meteor80        | 0xAA96    | 0xAA71                   | F103, RGB, Hotswap, Partially    | &check;           |
 | n66ble          | 0xAA96    | 0xAA72                   | BLE, Hotswap, RGB, Audio         | &check;           |
-| rose65          | 0xAA96    | 0xAA74(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
 | noname75        | 0xAA96    | 0xAA75                   | F103, RGB, Hotswap               | &check;           |
-| luck65          | 0xAA96    | 0xAA6D                   | F103, RGB, Hotswap               | &check;           |
-| meet            | 0xAA96    | 0xAA6E                   | BLE,  RGB, Hotswap, Alice        | &check;           |
+| meetAlice       | 0xAA96    | 0xAA6E                   | BLE,  RGB, Hotswap, Alice        | &check;           |
 | sueno69         | 0xAA96    | 0xAA76                   | F103, RGB, Hotswap, Tian68       | &check;           |
 | ckw80(v2)       | 0xAA96    | 0xAA77                   | BLE,  RGB, Hotswap               | &check;           |
 | id87            | 0xAA96    | 0xAA78                   | BLE,  RGB, Hotswap               | &check;           |
@@ -116,6 +117,14 @@ A creative coder.
 | dbp75           | 0xAA96    | 0xAA7B                   | F103, RGB, Hotswap, TFT Screen   | &check;           |
 | mu80            | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split left   | &check;           |
 | mu80pad         | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split right  | &check;           |
+| infi75          | 0xAA96    | 0xAA7D                   | F103, RGB, Hotswap, Encoder      | &check;           |
+| gwydd65         | 0xAA96    | 0xAA7E                   | F103, Multi-lauout, Hotswap      | &check;           |
+| razor65         | 0xAA96    | 0xAA7F                   | F103, RGB, Hotswap               | &check;           |
+| answer65        | 0xAA96    | 0xAAB1                   | BLE, Hotswap                     | &check;           |
+| zhou68          | 0xAA96    | 0xAAB2                   | BLE, Hotswap, RGB, TFT, Tian68   | &check;           |
+| starAlice       | 0xAA96    | 0xAAB3                   | Hotswap, RGB, TFT, Alice         | &check;           |
+
+
 
 
 ### Obsolete or Test keyboard for reference design only
