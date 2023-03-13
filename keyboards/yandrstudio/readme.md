@@ -107,13 +107,13 @@ A creative coder.
 | transition80    | 0xAA96    | 0xAA6F                   | F103, RGB, Hotswap               | &check;           |
 | meteor80        | 0xAA96    | 0xAA71                   | F103, RGB, Hotswap, Partially    | &check;           |
 | n66ble          | 0xAA96    | 0xAA72                   | BLE, Hotswap, RGB, Audio         | &check;           |
-| noname75        | 0xAA96    | 0xAA75                   | F103, RGB, Hotswap               | &check;           |
+| noname75        | 0xAA96    | 0xAA75                   | F103, RGB, Hotswap               | &cross;           |
 | meetAlice       | 0xAA96    | 0xAA6E                   | BLE,  RGB, Hotswap, Alice        | &check;           |
 | sueno69         | 0xAA96    | 0xAA76                   | F103, RGB, Hotswap, Tian68       | &check;           |
 | ckw80(v2)       | 0xAA96    | 0xAA77                   | BLE,  RGB, Hotswap               | &check;           |
 | id87            | 0xAA96    | 0xAA78                   | BLE,  RGB, Hotswap               | &check;           |
 | tg67ble         | 0xAA96    | 0xAA79                   | BLE,  RGB, Hotswap               | &check;           |
-| prime75         | 0xAA96    | 0xAA7A                   | F103, RGB, Hotswap               | &check;           |
+| prime75         | 0xAA96    | 0xAA7A                   | F103, RGB, Hotswap               | &cross;           |
 | dbp75           | 0xAA96    | 0xAA7B                   | F103, RGB, Hotswap, TFT Screen   | &check;           |
 | mu80            | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split left   | &check;           |
 | mu80pad         | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split right  | &check;           |
