@@ -92,7 +92,7 @@ uint8_t matrix_scan(void)
 
     //there are 9 bytes corresponding to 9 columns, and an end byte
     // 一列一列的接受数据 分左右 还有停止位
-    for (uint8_t i = 0; i < 2*MATRIX_COLS+1; i++) {
+    for (uint8_t i = 0; i < 27+1; i++) {
         //wait for the serial data, timeout if it's been too long
         //this only happened in testing with a loose wire, but does no
         //harm to leave it in here
