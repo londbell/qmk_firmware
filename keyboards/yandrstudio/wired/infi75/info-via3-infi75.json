@@ -24,6 +24,21 @@
             "name": "Launch Pad",
             "title": "Launch Pad in macOS",
             "shortName": "Launch Pad"
+        },
+        {
+            "name": "Toggle Key RGB",
+            "title": "Toggle Key RGB",
+            "shortName": "TRGB_KEY"
+        },
+        {
+            "name": "Toggle Encoder RGB",
+            "title": "Toggle Encoder RGB",
+            "shortName": "TRGB_ENC"
+        },
+        {
+            "name": "Toggle Light RGB",
+            "title": "Toggle Light RGB",
+            "shortName": "TRGB_LIT"
         }
     ],
     "matrix": {

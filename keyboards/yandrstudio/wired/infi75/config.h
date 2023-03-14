@@ -16,10 +16,10 @@
 
 //                        0    1   2    3   4   5   6   7   8   9   10   11  12  13  14
 #define MATRIX_COL_PINS { A9, B11, B10, B2, B1, B0, A7, B5, B4, B3, A15, B6, B7, B8, B9 }
-#define MATRIX_ROW_PINS { A6, A7,  A5,  A4, A3, A2 }
+#define MATRIX_ROW_PINS { A5, A6,  A4,  A3, A2, A1 }
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+#define DIODE_DIRECTION ROW2COL
 
 #define TAP_CODE_DELAY 15
 
