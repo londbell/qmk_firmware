@@ -13,5 +13,5 @@ RGB_MATRIX_DRIVER = WS2812
 # RGBLIGHT_DRIVER = WS2812
 WS2812_DRIVER = pwm
 
-CUSTOM_MATRIX = yes    # for using the A9 pin as matrix io
-QUANTUM_SRC += matrix_full_io.c 74hc595_io.c
+CUSTOM_MATRIX = yes
+QUANTUM_SRC += matrix_v2_io.c 74hc595_io.c

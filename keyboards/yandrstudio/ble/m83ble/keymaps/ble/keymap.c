@@ -62,11 +62,11 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
     {
         case BLE_TOG:
             switch_output_driver(0);
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case USB_TOG:
             switch_output_driver(1);
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BAU_TOG:
             if (where_to_send() == OUTPUT_USB) {
@@ -74,7 +74,7 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
             } else {
                 switch_output_driver(1);
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BL_SW_0:
         case BL_SW_1:
@@ -83,19 +83,19 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_switch_one(keycode - BL_SW_0);
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_DEL:
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_unpair_current();
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_CLR:
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_unpair_all();
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_OFF:
             stop_one_lilnk(0);
@@ -149,7 +149,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
     //  0                                                                                               11         12       13       14       15       16       17       18       19
-        KC_ESC,  KC_1,    KC_2,    KC_3,   KC_4,    KC_5,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_BSPC, KC_INS,  KC_NLCK,  KC_PSLS, KC_PAST, KC_PMNS,
+        KC_ESC,  KC_1,    KC_2,    KC_3,   KC_4,    KC_5,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_BSPC, KC_INS,  KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS,
         KC_TAB,  KC_Q,    KC_W,    KC_E,   KC_R,    KC_T,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, KC_BSLS, KC_HOME, KC_P7,    KC_P8,   KC_P9,   KC_PPLS,
         KC_CAPS, KC_A,    KC_S,    KC_D,   KC_F,    KC_G,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_BSLS, KC_ENT,  KC_ENT,  KC_END,  KC_P4,    KC_P5,   KC_P6,
         KC_LSFT, KC_BSLS, KC_Z,    KC_X,    KC_C,   KC_V,  KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,          KC_DEL,  KC_UP,   KC_P1,    KC_P2,   KC_P3,   KC_PENT,

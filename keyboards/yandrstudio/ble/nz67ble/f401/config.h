@@ -17,16 +17,6 @@
 
 #include "config_common.h"
 
-// #ifdef BOOTLOADER_TINYUF2
-// #   define FEE_PAGE_BASE_ADDRESS 0x08008000
-// #endif
-
-#ifdef BOOTLOADER_TINYUF2
-#        define FEE_FLASH_BASE 0x8000000
-#        define FEE_PAGE_COUNT 2 // How many pages are used
-#        define FEE_PAGE_BASE_ADDRESS ((uintptr_t)(FEE_FLASH_BASE) + FEE_MCU_FLASH_SIZE * 1024 - (FEE_PAGE_COUNT * FEE_PAGE_SIZE))
-#endif
-
 /* RGN Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
@@ -37,7 +27,6 @@
 #    define WS2812_DMA_CHANNEL 5  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 
 #endif
-
 
 #ifdef RGBLIGHT_ENABLE
 

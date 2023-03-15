@@ -110,7 +110,6 @@
 #define RGB_EN_STATE 1
 
 #define BleGetChannleEnable
-#define BleLedEnable
 
 #define BIUSTM32WKPin A0
 #define BIUNRF52ResetPin A1

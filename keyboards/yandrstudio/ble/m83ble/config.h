@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA62
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    JOJO_Y&R
-#define PRODUCT         m83ble
+#define MANUFACTURER    "JOJO_Y&R"
+#define PRODUCT         "m83"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -82,11 +82,11 @@
 
 #endif
 
+#define LED_CAPS_LOCK_PIN    A15
+#define LED_PIN_ON_STATE     1
+
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
@@ -105,7 +105,6 @@
 #define RGB_EN_STATE 1
 
 #define BleGetChannleEnable
-#define BleLedEnable
 
 #define BIUSTM32WKPin A0
 #define BIUNRF52ResetPin A1

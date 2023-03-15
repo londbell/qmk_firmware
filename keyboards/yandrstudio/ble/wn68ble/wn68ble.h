@@ -34,22 +34,22 @@
 enum keyboard_keycodes {
 #ifdef VIA_ENABLE
     LOCK_GUI = USER00,
+#else
+    LOCK_GUI = SAFE_RANGE,
+#endif
 #ifdef RGB_MATRIX_ENABLE
     KC_KEY_UNDER_RGBSW,
 #endif
     TOG_MACOS_KEYMAP,
     KC_MISSION_CONTROL,
     KC_LAUNCHPAD,
+#ifdef VIA_ENABLE
     NEW_SAFE_RANGE = SAFE_RANGE  // Important!
 #else
-    LOCK_GUI = SAFE_RANGE,
-#ifdef RGB_MATRIX_ENABLE
-    KC_KEY_UNDER_RGBSW,
-#endif
-    KC_MISSION_CONTROL,
-    KC_LAUNCHPAD,
     NEW_SAFE_RANGE   // Important!
 #endif
+
+
 };
 
 #define KC_LG     LOCK_GUI

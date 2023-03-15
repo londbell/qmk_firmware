@@ -76,29 +76,73 @@ extern const rgb_matrix_driver_t rgb_matrix_driver;
 void keyboard_post_init_kb(void) {
     user_config.underground_rgb_sw = eeconfig_read_kb();
     rgb_matrix_reload_from_eeprom();
-    debug_enable = true;
+    // debug_enable = true;
 }
 #   endif
 #endif
 
 #if defined(RGBLIGHT_ENABLE) && defined(BIU_BLE5_ENABLE)
 
-const rgblight_segment_t PROGMEM bt_conn[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 0
-const rgblight_segment_t PROGMEM bt_pair[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 1
-const rgblight_segment_t PROGMEM usb_pair[]          = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_WHITE});  // 2
-const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_RED});    // 3
-const rgblight_segment_t PROGMEM bat_10_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});  // 4
-const rgblight_segment_t PROGMEM bat_30_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 2, HSV_GREEN});  // 5
-const rgblight_segment_t PROGMEM bat_50_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 3, HSV_GREEN});  // 6
-const rgblight_segment_t PROGMEM bat_70_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});  // 7
-const rgblight_segment_t PROGMEM bat_80_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 5, HSV_GREEN});  // 8
-const rgblight_segment_t PROGMEM bat_90_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_GREEN});  // 9
+const rgblight_segment_t PROGMEM bt_conn1_layer[]     = RGBLIGHT_LAYER_SEGMENTS({28,  1,  HSV_GREEN});  // 0
+const rgblight_segment_t PROGMEM bt_conn2_layer[]     = RGBLIGHT_LAYER_SEGMENTS({27,  1,  HSV_GREEN});  // 1
+const rgblight_segment_t PROGMEM bt_conn3_layer[]     = RGBLIGHT_LAYER_SEGMENTS({26,  1,  HSV_GREEN});  // 2
+const rgblight_segment_t PROGMEM bt_conn4_layer[]     = RGBLIGHT_LAYER_SEGMENTS({25,  1,  HSV_GREEN});  // 3
+const rgblight_segment_t PROGMEM bt_pair1_layer[]     = RGBLIGHT_LAYER_SEGMENTS({28,  1,  HSV_BLUE});   // 4
+const rgblight_segment_t PROGMEM bt_pair2_layer[]     = RGBLIGHT_LAYER_SEGMENTS({27,  1,  HSV_BLUE});   // 5
+const rgblight_segment_t PROGMEM bt_pair3_layer[]     = RGBLIGHT_LAYER_SEGMENTS({26,  1,  HSV_BLUE});   // 6
+const rgblight_segment_t PROGMEM bt_pair4_layer[]     = RGBLIGHT_LAYER_SEGMENTS({25,  1,  HSV_BLUE});   // 7
+const rgblight_segment_t PROGMEM usb_pair_layer[]     = RGBLIGHT_LAYER_SEGMENTS({32,  1,  HSV_BLUE});   // 8
+const rgblight_segment_t PROGMEM usb_conn_layer[]     = RGBLIGHT_LAYER_SEGMENTS({32,  1,  HSV_GREEN});  // 9
+const rgblight_segment_t PROGMEM capslock_layer[]     = RGBLIGHT_LAYER_SEGMENTS({30,  1,  HSV_RED});    // 10
+const rgblight_segment_t PROGMEM bat_10_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   1,  HSV_RED});    // 11
+const rgblight_segment_t PROGMEM bat_20_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   2,  HSV_GREEN});  // 12
+const rgblight_segment_t PROGMEM bat_30_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   3,  HSV_GREEN});  // 13
+const rgblight_segment_t PROGMEM bat_40_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   4,  HSV_GREEN});  // 14
+const rgblight_segment_t PROGMEM bat_50_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   5,  HSV_GREEN});  // 15
+const rgblight_segment_t PROGMEM bat_60_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   6,  HSV_GREEN});  // 16
+const rgblight_segment_t PROGMEM bat_70_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   7,  HSV_GREEN});  // 17
+const rgblight_segment_t PROGMEM bat_80_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   8,  HSV_GREEN});  // 18
+const rgblight_segment_t PROGMEM bat_90_layer[]       = RGBLIGHT_LAYER_SEGMENTS({1,   9,  HSV_GREEN});  // 19
+const rgblight_segment_t PROGMEM bat_100_layer[]      = RGBLIGHT_LAYER_SEGMENTS({1,   10, HSV_GREEN});  // 20
 
-const rgblight_segment_t* const PROGMEM _rgb_layers[] = RGBLIGHT_LAYERS_LIST(bt_conn, bt_pair, usb_pair, my_capslock_layer, bat_10_layer, bat_30_layer, bat_50_layer, bat_70_layer, bat_80_layer, bat_90_layer);
+const rgblight_segment_t* const PROGMEM _rgb_layers[] = RGBLIGHT_LAYERS_LIST(bt_conn1_layer,
+                                                                             bt_conn2_layer,
+                                                                             bt_conn3_layer,
+                                                                             bt_conn4_layer,
+                                                                             bt_pair1_layer,
+                                                                             bt_pair2_layer,
+                                                                             bt_pair3_layer,
+                                                                             bt_pair4_layer,
+                                                                             usb_pair_layer,
+                                                                             usb_conn_layer,
+                                                                             capslock_layer,
+                                                                             bat_10_layer,
+                                                                             bat_20_layer,
+                                                                             bat_30_layer,
+                                                                             bat_40_layer,
+                                                                             bat_50_layer,
+                                                                             bat_60_layer,
+                                                                             bat_70_layer,
+                                                                             bat_80_layer,
+                                                                             bat_90_layer,
+                                                                             bat_100_layer);
 
 void keyboard_post_init_kb(void) {
     rgblight_layers = _rgb_layers;
     rgblight_reload_from_eeprom();
+}
+
+void rgblight_unblink_all_but_caps_bat_layer(void) {
+    for (uint8_t i = 0; i < 10; i++) {
+        rgblight_unblink_layer(i);
+    }
+}
+
+void rgblight_unblink_all_batlayer_but_one_layer(uint8_t l) {
+    for (uint8_t i = 11; i < 21; i++) {
+        if (l == i) continue;
+        rgblight_unblink_layer(i);
+    }
 }
 
 bool ble_led_update_kb(uint8_t channle, uint8_t state) {
@@ -117,20 +161,39 @@ bool ble_led_update_kb(uint8_t channle, uint8_t state) {
     */
     if (channle == 0xa) {
         if (state != 0xa0) {
-            rgblight_blink_layer_repeat(2, 500, 8);
+            rgblight_unblink_all_but_caps_bat_layer();
+            rgblight_blink_layer_repeat(8, 500, 8);
+        } else {
+            rgblight_unblink_all_but_caps_bat_layer();
+            rgblight_blink_layer_repeat(9, 1000, 1);
         }
     } else if (channle <= 7) {
         if (state == 7) {
-            rgblight_blink_layer_repeat(0, 500, 8);
+            rgblight_unblink_all_but_layer(channle%4);
+            rgblight_blink_layer_repeat(channle%4, 500, 8);
         } else if (state == 8) {
-            rgblight_blink_layer_repeat(1, 200, 20);
+            rgblight_unblink_all_but_layer(channle%4+4);
+            rgblight_blink_layer_repeat(channle%4+4, 200, 20);
+        } else if (state == 1) {
+            rgblight_unblink_all_but_layer(channle%4);
+            rgblight_blink_layer_repeat(channle%4, 3000, 1);
+        } else {
+            rgblight_unblink_all_but_caps_bat_layer();
         }
     }
     return true;
 }
 
 bool led_update_kb(led_t led_state) {
-    rgblight_set_layer_state(3, led_state.caps_lock);
+    bool res = led_update_user(led_state);
+    if (res) {
+        rgblight_set_layer_state(10, led_state.caps_lock);
+        if (get_bat_level() <= 10) {
+            rgblight_set_layer_state(11, 1);
+        } else {
+            rgblight_set_layer_state(11, 0);
+        }
+    }
     return true;
 }
 
@@ -154,6 +217,23 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         return true;
 #   endif
 #endif
+
+#ifdef RGBLIGHT_ENABLE
+        case BAT_SHOW: {
+            if (record->event.pressed) {
+                uint8_t bat_l_t =  get_bat_level();
+                if (bat_l_t <= 10) {
+                    rgblight_unblink_all_batlayer_but_one_layer(11);
+                    rgblight_blink_layer_repeat(11, 1500, 1);
+                } else {
+                    rgblight_unblink_all_batlayer_but_one_layer((bat_l_t%101)/10+10);
+                    rgblight_blink_layer_repeat((bat_l_t%101)/10+10, 1500, 1);
+                }
+            }
+        }
+            return false;
+#endif
+
         case KC_LG:
             if (record->event.pressed) {
                 process_magic(GUI_TOG, record);
@@ -192,11 +272,3 @@ void keyboard_pre_init_kb(void) {
     writePin(RGB_BLE_SW, 0);
 }
 #endif
-
-// void housekeeping_task_kb(void) {
-//     if (!rgb_matrix_is_enabled()) {
-//         writePin(RGB_BLE_SW, !RGB_EN_STATE);
-//     } else {
-//         writePin(RGB_BLE_SW, RGB_EN_STATE);
-//     }
-// }

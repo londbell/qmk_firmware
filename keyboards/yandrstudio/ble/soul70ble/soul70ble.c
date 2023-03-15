@@ -45,6 +45,7 @@ const rgblight_segment_t* const PROGMEM _rgb_layers[] = RGBLIGHT_LAYERS_LIST( bt
 void keyboard_post_init_kb(void) {
     rgblight_layers = _rgb_layers;
     rgblight_reload_from_eeprom();
+    keyboard_post_init_user();
 }
 
 bool ble_led_update_kb(uint8_t channle, uint8_t state) {

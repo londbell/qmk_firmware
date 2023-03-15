@@ -16,10 +16,3 @@
 #pragma once
 
 #include "config_common.h"
-
-#ifdef BOOTLOADER_TINYUF2
-#   define FEE_PAGE_BASE_ADDRESS 0x08008000
-#endif
-// #define FEE_MCU_FLASH_SIZE 256 // Size in Kb
-// #define FEE_FLASH_BASE 0x8000000
-// #define FEE_PAGE_BASE_ADDRESS ((uintptr_t)(FEE_FLASH_BASE) + FEE_MCU_FLASH_SIZE * 1024 - (FEE_PAGE_COUNT * FEE_PAGE_SIZE))

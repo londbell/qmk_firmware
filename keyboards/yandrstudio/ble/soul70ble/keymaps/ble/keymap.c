@@ -62,11 +62,11 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
     {
         case BLE_TOG:
             switch_output_driver(0);
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case USB_TOG:
             switch_output_driver(1);
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BAU_TOG:
             if (where_to_send() == OUTPUT_USB) {
@@ -74,7 +74,7 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
             } else {
                 switch_output_driver(1);
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BL_SW_0:
         case BL_SW_1:
@@ -83,19 +83,19 @@ void dance_tab_ble_on_finished(qk_tap_dance_state_t *state, void *user_data) {
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_switch_one(keycode - BL_SW_0);
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_DEL:
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_unpair_current();
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_CLR:
             if (where_to_send() == OUTPUT_BLUETOOTH) {
                 bluetooth_unpair_all();
             }
-            ble_channle_update();
+            ble_channle_update(true);
             break;
         case BLE_OFF:
             stop_one_lilnk(0);

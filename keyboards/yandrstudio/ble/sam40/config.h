@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA84
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    SAM_Y&R
-#define PRODUCT         sam40
+#define MANUFACTURER    "SAM_Y&R"
+#define PRODUCT         "sam40"
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -35,19 +35,12 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-// #define LED_CAPS_LOCK_PIN A15
-// #define LED_PIN_ON_STATE    1
-
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
 
 
 // fix VIA RGB_light
 #define VIA_HAS_BROKEN_KEYCODES
-
-
-/* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
 
 
 /* Set 0 if debouncing isn't needed */

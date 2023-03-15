@@ -96,7 +96,6 @@
 #endif
 
 // #define BleGetChannleEnable
-// #define BleLedEnable
 
 // for ble
 #define DISABLE_MAGIC_BOOTLOADER

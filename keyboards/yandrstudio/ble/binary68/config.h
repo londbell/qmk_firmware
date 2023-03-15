@@ -84,18 +84,13 @@
 #define HOLD_ON_OTHER_KEY_PRESS
 #define TAP_HOLD_CAPS_DELAY 150
 
-#ifdef VIA_ENABLE
-#   define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 2
-#   define DYNAMIC_KEYMAP_LAYER_COUNT 4
-#   define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 2048
-#endif
-
 // for ble
 #define DISABLE_MAGIC_BOOTLOADER
 #define DISABLE_EEPROM_CLEAR
 
 // disable rgb when using ble
 #define RGB_BLE_SW A15
+#define RGB_EN_STATE 0
 
 #define BIUSTM32WKPin A0
 #define BIUNRF52ResetPin A1

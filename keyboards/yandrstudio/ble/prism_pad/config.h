@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAAEA
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    MU_Y&R
-#define PRODUCT         PRISM_PAD
+#define MANUFACTURER    "MU_Y&R"
+#define PRODUCT         "PRISM_PAD"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -34,15 +34,6 @@
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
 
 #define LED_NUM_LOCK_PIN     B12
 #define LED_PIN_ON_STATE     1

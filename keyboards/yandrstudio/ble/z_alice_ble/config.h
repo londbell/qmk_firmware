@@ -21,8 +21,8 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAAC2
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    ZUOER_Y&R
-#define PRODUCT         Z_Alice
+#define MANUFACTURER    "ZUOER_Y&R"
+#define PRODUCT         "Z_Alice"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -30,18 +30,6 @@
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
 
 #define TAP_CODE_DELAY 15
 
@@ -52,8 +40,7 @@
 #ifdef RGB_MATRIX_ENABLE
 
 #   define RGB_DI_PIN A7
-#   define RGBLED_NUM 69
-#   define DRIVER_LED_TOTAL RGBLED_NUM
+#   define RGB_MATRIX_LED_COUNT 69
 
 #   define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
 #   define WS2812_PWM_CHANNEL 2  // default: 2
@@ -165,7 +152,7 @@
 
 // for ble
 // #define USE_MUILT_THREAD_FOR_BLE
-// #define Z_ALICE_REV1
+#define Z_ALICE_REV1
 // rgb switch
 #ifdef Z_ALICE_REV1
 
