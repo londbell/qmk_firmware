@@ -17,7 +17,7 @@
 #include QMK_KEYBOARD_H
 
 enum keyboard_keycodes {
-    LOCK_GUI = QK_USER,
+    LOCK_GUI = QK_KB,
 #ifdef RGB_MATRIX_ENABLE
     KC_KEY_UNDER_RGBSW,
 #endif
