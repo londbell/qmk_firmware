@@ -14,14 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "config_common.h"
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0xAA96
 #define PRODUCT_ID 0xAA61
 #define DEVICE_VER 0x0001
-#define MANUFACTURER BL_Y&R
-#define PRODUCT bl75
+#define MANUFACTURER "BL_Y&R"
+#define PRODUCT "bl75"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -34,15 +33,6 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
 #define TAP_CODE_DELAY 15
 
 #ifdef ENCODER_ENABLE
@@ -52,37 +42,12 @@
 #endif
 
 
-#ifdef RGBLIGHT_ENABLE
-
-#    define RGB_DI_PIN A7
-#    define RGBLED_NUM 116
-#    define DRIVER_LED_TOTAL RGBLED_NUM
-#    define RGBLIGHT_SLEEP
-#    define RGBLIGHT_VAL_STEP 5
-#    define RGBLIGHT_LIMIT_VAL 200
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED true
-#    define RGBLIGHT_ANIMATIONS
-
-#    define RGBLIGHT_EFFECT_BREATHING
-#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#    define RGBLIGHT_EFFECT_SNAKE
-#    define RGBLIGHT_EFFECT_KNIGHT
-#    define RGBLIGHT_EFFECT_CHRISTMAS
-#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
-#    define RGBLIGHT_EFFECT_RGB_TEST
-#    define RGBLIGHT_EFFECT_ALTERNATING
-#    define RGBLIGHT_EFFECT_TWINKLE
-#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
-
-#endif
-
 /* RGB Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
 #    define RGB_DI_PIN A7
 #    define RGBLED_NUM 116
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
 #    define RGBLIGHT_VAL_STEP 5

@@ -55,95 +55,20 @@ led_config_t g_led_config = {
 };
 
 // globol
-typedef union {
-    uint32_t raw;
-    uint8_t  underground_rgb_sw : 8;
-} user_config_t;
-user_config_t user_config;
-
-void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
-    if (rgb_matrix_is_enabled()) {
-        if (user_config.underground_rgb_sw == 1) {
-            for (uint8_t i = led_min; i < led_max; ++i) {
-                if ((g_led_config.flags[i] == 4)) {
-                    rgb_matrix_set_color(i, 0, 0, 0);
-                }
-            }
-        } else if (user_config.underground_rgb_sw == 2) {
-            for (uint8_t i = led_min; i < led_max; ++i) {
-                if ((g_led_config.flags[i] == 2)) {
-                    rgb_matrix_set_color(i, 0, 0, 0);
-                }
-            }
-        }
-    } else {
-        rgb_matrix_set_color_all(0, 0, 0);
-    }
-}
+kb_cums_config_t kb_cums_config;
 
 void eeconfig_init_kb(void) {
-    user_config.raw = 0;
-    eeconfig_update_kb(user_config.raw);
+    kb_cums_config.raw = 0;
+    eeconfig_update_kb(kb_cums_config.raw);
 }
 
 extern const rgb_matrix_driver_t rgb_matrix_driver;
 void keyboard_post_init_kb(void) {
-    user_config.underground_rgb_sw = eeconfig_read_kb();
+    kb_cums_config.underground_rgb_sw = eeconfig_read_kb();
     rgb_matrix_reload_from_eeprom();
 }
 
 #endif
 
 
-#ifdef RGBLIGHT_ENABLE
 
-void keyboard_post_init_kb(void) {
-    rgblight_reload_from_eeprom();
-}
-
-#endif
-
-
-bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    if (!process_record_user(keycode, record)) {
-        return false;
-    }
-    switch (keycode) {
-#ifdef RGB_MATRIX_ENABLE
-        case RGB_KG_T:
-            if (rgb_matrix_config.enable && record->event.pressed) {
-                user_config.underground_rgb_sw += 1;
-                user_config.underground_rgb_sw %= 3;
-                eeconfig_update_kb(user_config.raw);
-            }
-            return false;
-#endif
-        case KC_LG:
-            if (record->event.pressed) {
-                process_magic(GUI_TOG, record);
-            }
-            return false;
-        case KC_MACOS:
-            if (record->event.pressed) {
-                process_magic(CG_TOGG, record);
-            }
-            return false;
-        case KC_MCTL:
-            if (record->event.pressed) {
-                host_consumer_send(0x29F);
-            } else {
-                host_consumer_send(0);
-            }
-            return false;
-        case KC_LPAD:
-            if (record->event.pressed) {
-                host_consumer_send(0x2A0);
-            } else {
-                host_consumer_send(0);
-            }
-            return false;
-        default:
-            return true;
-    }
-    return true;
-}

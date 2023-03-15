@@ -18,33 +18,9 @@
     { K500,  K501,  K502,  KC_NO, KC_NO, KC_NO, K506,  KC_NO, KC_NO, KC_NO, K510,  K511,  K512,  K513,  K514  }  \
 }
 
-enum keyboard_keycodes {
-#ifdef VIA_ENABLE
-    LOCK_GUI = USER00,
 #ifdef RGB_MATRIX_ENABLE
-    KC_KEY_UNDER_RGBSW,
-#endif
-    TOG_MACOS_KEYMAP,
-    KC_MISSION_CONTROL,
-    KC_LAUNCHPAD,
-    NEW_SAFE_RANGE = SAFE_RANGE  // Important!
-#else
-    LOCK_GUI = SAFE_RANGE,
-#ifdef RGB_MATRIX_ENABLE
-    KC_KEY_UNDER_RGBSW,
-#endif
-    KC_MISSION_CONTROL,
-    KC_LAUNCHPAD,
-    NEW_SAFE_RANGE   // Important!
-#endif
-};
-
-#define KC_LG     LOCK_GUI
-#define KC_MACOS  TOG_MACOS_KEYMAP
-#define KC_MCTL   KC_MISSION_CONTROL
-#define KC_LPAD   KC_LAUNCHPAD
-#ifdef RGB_MATRIX_ENABLE
-#   define RGB_KG_T  KC_KEY_UNDER_RGBSW
-#else
-#   define RGB_KG_T  KC_F14
+typedef union {
+    uint32_t raw;
+    uint8_t  underground_rgb_sw : 8;
+} kb_cums_config_t;
 #endif

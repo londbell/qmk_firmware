@@ -16,6 +16,27 @@
 
 #include QMK_KEYBOARD_H
 
+enum keyboard_keycodes {
+    LOCK_GUI = QK_USER,
+#ifdef RGB_MATRIX_ENABLE
+    KC_KEY_UNDER_RGBSW,
+#endif
+    TOG_MACOS_KEYMAP_MAC,
+    KC_MISSION_CONTROL_MAC,
+    KC_LAUNCHPAD_MAC,
+};
+
+#define MKC_LG     LOCK_GUI
+#define MKC_MACOS  TOG_MACOS_KEYMAP_MAC
+#define MKC_MCTL   KC_MISSION_CONTROL_MAC
+#define MKC_LPAD   KC_LAUNCHPAD_MAC
+
+#ifdef RGB_MATRIX_ENABLE
+#   define RGB_KG_T  KC_KEY_UNDER_RGBSW
+#else
+#   define RGB_KG_T  KC_F14
+#endif
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,  KC_F4,   KC_F5, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_VOLU, KC_VOLD,
@@ -29,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, RGB_KG_T,RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
-        KC_TRNS,          RGB_TOG, RGB_MOD, RGB_RMOD,RGB_VAI, RGB_VAD, KC_TRNS,  KC_MACOS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_LG,   KC_TRNS,                            KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+        KC_TRNS,          RGB_TOG, RGB_MOD, RGB_RMOD,RGB_VAI, RGB_VAD, KC_TRNS,  MKC_MACOS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, MKC_LG,  KC_TRNS,                            KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
     [2] = LAYOUT(
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -56,14 +77,69 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
+#ifdef RGB_MATRIX_ENABLE
+extern kb_cums_config_t kb_cums_config;
 
-#if !defined(ENCODER_MAP_ENABLE) && defined(ENCODER_ENABLE)
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (clockwise) {
-        tap_code_delay(KC_VOLD, 10);
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    if (rgb_matrix_is_enabled()) {
+        if (kb_cums_config.underground_rgb_sw == 1) {
+            for (uint8_t i = led_min; i < led_max; ++i) {
+                if ((g_led_config.flags[i] == 4)) {
+                    rgb_matrix_set_color(i, 0, 0, 0);
+                }
+            }
+        } else if (kb_cums_config.underground_rgb_sw == 2) {
+            for (uint8_t i = led_min; i < led_max; ++i) {
+                if ((g_led_config.flags[i] == 2)) {
+                    rgb_matrix_set_color(i, 0, 0, 0);
+                }
+            }
+        }
     } else {
-        tap_code_delay(KC_VOLU, 10);
+        rgb_matrix_set_color_all(0, 0, 0);
     }
-    return false;
+    return true;
 }
+
 #endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+#ifdef RGB_MATRIX_ENABLE
+        case RGB_KG_T:
+            if (rgb_matrix_config.enable && record->event.pressed) {
+                kb_cums_config.underground_rgb_sw += 1;
+                kb_cums_config.underground_rgb_sw %= 3;
+                eeconfig_update_kb(kb_cums_config.raw);
+            }
+            return false;
+#endif
+        case MKC_LG:
+            if (record->event.pressed) {
+                process_magic(GUI_TOG, record);
+            }
+            return false;
+        case MKC_MACOS:
+            if (record->event.pressed) {
+                process_magic(CG_TOGG, record);
+            }
+            return false;
+        case MKC_MCTL:
+            if (record->event.pressed) {
+                host_consumer_send(0x29F);
+            } else {
+                host_consumer_send(0);
+            }
+            return false;
+        case MKC_LPAD:
+            if (record->event.pressed) {
+                host_consumer_send(0x2A0);
+            } else {
+                host_consumer_send(0);
+            }
+            return false;
+        default:
+            return true;
+    }
+    return true;
+}
