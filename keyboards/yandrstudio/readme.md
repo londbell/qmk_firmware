@@ -15,18 +15,20 @@ A creative coder.
 | rainbow65     | 0xAA96    | 0xAA00     | OLED, RGB, ENCODER                    | &check;           |
 | cool87        | 0xAA96    | 0xAA01     | 32u4                                  | &cross;           |
 | sb65p         | 0xAA96    | 0xAA02     | 2.4G Single mode Split Keyboard       | &cross;           |
-| r65ble        | 0xAA96    | 0xAA03     | BLE 5.0 Dual mod version of rainbow65 | &quest;           |
+| r65ble        | 0xAA96    | 0xAA03     | BLE 5.0 Dual mod version of rainbow65 | &cross;           |
 | whitemouse28t | 0xAA96    | 0xAA04     | External EEPROM (95256), For Test     | &cross;           |
-| m60ble        | 0xAA96    | 0xAA05     | BLE 5.0 Dual mode, RGB                | &quest;           |
+| m60ble        | 0xAA96    | 0xAA05     | BLE 5.0 Dual mode, RGB                | &cross;           |
 | nz64ble       | 0xAA96    | 0xAA06     | BLE 5.0 Dual mode                     | &check;           |
-| zn660         | 0xAA96    | 0xAA07     | 2.4G Single mode Split Keyboard       | &check;           |
-| nz60ble       | 0xAA96    | 0xAA08     | BLE 5.0 Dual mode                     | &check;           |
-| yrtower       | 0xAA96    | 0xAA09     | BLE 5.0 Dual mode, RGB, OLDE, Encoder | &check;           |
-| yr32test      | 0xAA96    | 0xAA0A     | BLE, Full Functions                   | &check;           |
-| yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &check;           |
+| zn660         | 0xAA96    | 0xAA07     | 2.4G Single mode Split Keyboard       | &cross;           |
+| nz60ble       | 0xAA96    | 0xAA08     | BLE 5.0 Dual mode                     | &quest;           |
+| yrtower       | 0xAA96    | 0xAA09     | BLE 5.0 Dual mode, RGB, OLDE, Encoder | &quest;           |
+| yr32test      | 0xAA96    | 0xAA0A     | BLE, Full Functions                   | &cross;           |
+| yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &cross;           |
 | yr6095        | 0xAA96    | 0xAA0C     | F103                                  | &check;           |
 | yr80          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
 | ps64ble       | 0xAA96    | 0xAA0E     | BLE 5.0 Dual mode,RGB                 | &check;           |
+| sp65pm        | 0xAA96    | 0xAA0F     | 2.4G Single mode Split Keyboard       | &cross;           |
+
 
 
 ### Keyboards Completed with Y&R Studio Participation

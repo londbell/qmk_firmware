@@ -5,7 +5,7 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID     0xAA96
-#define PRODUCT_ID    0xAA07
+#define PRODUCT_ID    0xAA0F
 #define DEVICE_VER    0x0001
 #define MANUFACTURER  "Y&R"
 #define PRODUCT       "SPKB_ProMax"
