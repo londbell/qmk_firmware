@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later]
 
 #include "sp65pm.h"
-
+#include "print.h"
 
 void uart_init(void) {
     SERIAL_UART_INIT();
@@ -18,4 +18,14 @@ void matrix_scan_kb(void) {
     // put your looping keyboard code here
     // runs every cycle (a lot)
     matrix_scan_user();
+}
+
+extern uint16_t adc_val;
+bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
+    if (!process_record_user(keycode, record)) { return false; }
+
+    if (record->event.pressed) {
+        uprintf("adc %d\n", adc_val);
+    }
+    return true;
 }

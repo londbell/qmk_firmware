@@ -32,6 +32,7 @@
 
 /* matrix state(1:on, 0:off) */
 static matrix_row_t matrix[MATRIX_ROWS];
+uint16_t adc_val = 1;
 
 __attribute__ ((weak))
 void matrix_init_quantum(void) {
@@ -88,11 +89,11 @@ uint8_t matrix_scan(void)
     //trust the external keystates entirely, erase the last data
     // 2倍列+1个终止位
     // #define MATRIX_COLS 8
-    uint8_t uart_data[28] = {0};
+    uint8_t uart_data[30] = {0};
 
     //there are 9 bytes corresponding to 9 columns, and an end byte
     // 一列一列的接受数据 分左右 还有停止位
-    for (uint8_t i = 0; i < 27+1; i++) {
+    for (uint8_t i = 0; i < 27+2+1; i++) {
         //wait for the serial data, timeout if it's been too long
         //this only happened in testing with a loose wire, but does no
         //harm to leave it in here
@@ -109,7 +110,7 @@ uint8_t matrix_scan(void)
     //check for the end packet, the key state bytes use the LSBs, so 0xE0
     //will only show up here if the correct bytes were recieved
     // 判断受否收到了全部数据
-    if (uart_data[27] == 0xE0)
+    if (uart_data[29] == 0xE0)
     {
         //shifting and transferring the keystates to the QMK matrix variable
         // 直接把每一行数据复制给matrix，叠加行方法的方便之处便体现出来了
@@ -135,6 +136,7 @@ uint8_t matrix_scan(void)
                 matrix[i] |= (matrix_row_t)((uart_data[j+18] & 1<<(i-10)) ? 1:0) << j;
             }
         }
+        adc_val = (uart_data[28]<<8) | uart_data[27];
     }
 
 
