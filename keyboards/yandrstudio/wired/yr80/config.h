@@ -14,14 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "config_common.h"
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA0D
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Y&R
-#define PRODUCT         yr80
+#define MANUFACTURER    "Y&R"
+#define PRODUCT         "yr80"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -33,15 +32,6 @@
 //                        0    1    2    3    4    5    6   7    8    9    10   11   12   13    14   15   16
 #define MATRIX_COL_PINS { B12, B13, B14, A15, B3,  B4,  B5, B0,  A5,  A4,  A3,  A1,  A2,  B11,  B1,  B2,  B10 }
 #define MATRIX_ROW_PINS { B15, B6,  B7,  B8,  B9,  A6 }
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
 
 #define TAP_CODE_DELAY 15
 
