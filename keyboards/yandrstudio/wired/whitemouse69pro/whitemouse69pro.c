@@ -24,15 +24,6 @@ typedef union {
 } kb_cums_t;
 kb_cums_t kb_cums;
 
-/*
-{56,  57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70},
-{55,  54,  53,  52,  51,  50,  49,  48,  47,  46,  45,  44,  43,  42,  41},
-{27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,   NO_LED,  38,  39,  40},
-{26,  25,  24,  23,  22,  21,  20,  19,  18,  17,  16,  15,  14,  13,  12},
-{0,  1,  2,  3,   NO_LED,   NO_LED,   NO_LED,  4,  5,  6,  7,  8,  9,  10,  11},
-
-*/
-
 led_config_t g_led_config = {
     {
         {69,  71,  72,  74,  75,  77,  78,  80,  81,  83,  84,  86,  87,  89,  91},
@@ -63,7 +54,7 @@ led_config_t g_led_config = {
 };
 
 
-void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (rgb_matrix_is_enabled()) {
         if (kb_cums.underground_rgb_sw == 1) {
             for (uint8_t i = led_min; i < led_max; ++i) {
@@ -81,6 +72,7 @@ void rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     } else {
         rgb_matrix_set_color_all(0,0,0);
     }
+    return true;
 }
 
 void eeconfig_init_kb(void) {

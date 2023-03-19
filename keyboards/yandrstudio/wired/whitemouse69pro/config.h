@@ -15,14 +15,12 @@
  */
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA80
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    LKAILL_Y&R
-#define PRODUCT         whiteMouse69pro
+#define MANUFACTURER    "LKAILL_Y&R"
+#define PRODUCT         "whiteMouse69pro"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -35,21 +33,11 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
-#define QMK_KEYS_PER_SCAN 4
-
 #ifdef ENCODER_ENABLE
 
 #   define ENCODERS_PAD_A { A7 }
 #   define ENCODERS_PAD_B { B0 }
+#   define ENCODER_DEFAULT_POS 0x3
 
 #endif
 
@@ -58,7 +46,7 @@
 
 #    define RGB_DI_PIN B5
 #    define RGBLED_NUM 93
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
 
 #    define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
 #    define WS2812_PWM_CHANNEL 2  // default: 2
@@ -119,25 +107,5 @@
 #   define ENABLE_RGB_MATRIX_MULTISPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
-
-#endif
-
-
-#ifdef RGBLIGHT_ENABLE
-
-#    define RGB_DI_PIN B5
-#    define RGBLED_NUM 93
-#    define DRIVER_LED_TOTAL RGBLED_NUM
-#    define RGBLIGHT_SLEEP
-#    define RGBLIGHT_VAL_STEP 15
-#    define RGBLIGHT_LIMIT_VAL 150
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED true
-#    define RGBLIGHT_ANIMATIONS
-
-#    define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
-#    define WS2812_PWM_CHANNEL 2  // default: 2
-#    define WS2812_PWM_PAL_MODE 2  // Pin "alternate function", see the respective datasheet for the appropriate values for your MCU. default: 2
-#    define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#    define WS2812_DMA_CHANNEL 5  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 
 #endif

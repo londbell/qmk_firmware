@@ -2,10 +2,8 @@
     "name": "WS69PRO_Y&R",
     "vendorId": "0xAA96",
     "productId": "0xAA80",
-    "lighting": {
-        "extends": "none",
-        "keycodes": "qmk"
-    },
+    "keycodes": ["qmk_lighting"],
+    "menus": ["qmk_rgb_matrix"],
     "matrix": {
         "rows": 5,
         "cols": 15
