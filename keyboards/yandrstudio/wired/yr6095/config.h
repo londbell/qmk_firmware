@@ -15,8 +15,6 @@
  */
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA0C
@@ -34,6 +32,8 @@
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
+
+#define DEBUG_MATRIX_SCAN_RATE
 
 #define TAP_HOLD_CAPS_DELAY 250
 
