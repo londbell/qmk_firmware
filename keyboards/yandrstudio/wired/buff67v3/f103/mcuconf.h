@@ -1,27 +1,17 @@
-/* Copyright 2022 JasonRen(biu)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+// Copyright 2023 Y&R-Biu (@jiaxin96)
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
 #include_next <mcuconf.h>
 
-// #undef STM32_PWM_USE_TIM3
-#undef STM32_PWM_USE_TIM2
-// #define STM32_PWM_USE_TIM3 TRUE
-#define STM32_PWM_USE_TIM2 TRUE
+#if (PRODUCT_YR_ID == 3) || (PRODUCT_YR_ID == 2)
+#   undef STM32_PWM_USE_TIM2
+#   define STM32_PWM_USE_TIM2 TRUE
+#else
+#   undef STM32_PWM_USE_TIM3
+#   define STM32_PWM_USE_TIM3 TRUE
+#endif
 
 #undef  STM32_PLLXTPRE
 #define STM32_PLLXTPRE STM32_PLLXTPRE_DIV2

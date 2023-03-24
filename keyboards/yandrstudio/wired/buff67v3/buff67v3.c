@@ -1,23 +1,15 @@
-/* Copyright 2022 JasonRen(biu)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+// Copyright 2023 Y&R-Biu (@jiaxin96)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #include "buff67v3.h"
 
 #ifdef RGBLIGHT_ENABLE
 
+#if PRODUCT_YR_ID == 3
+const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_RED});
+#else
 const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_RED});
+#endif
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(my_capslock_layer);
 
@@ -32,20 +24,3 @@ void keyboard_post_init_kb(void) {
 }
 
 #endif
-
-bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
-    if (!process_record_user(keycode, record)) {
-        return false;
-    }
-    switch (keycode) {
-        case LOCK_GUI:
-        case KC_F23:
-            if (record->event.pressed) {
-                process_magic(GUI_TOG, record);
-            }
-            return false;
-        default:
-            return true;
-    }
-    return true;
-}

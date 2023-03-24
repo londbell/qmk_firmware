@@ -1,18 +1,6 @@
-/* Copyright 2022 JasonRen(biu)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+// Copyright 2023 Y&R-Biu (@jiaxin96)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #pragma once
 
 #include "quantum.h"
@@ -30,13 +18,3 @@
 	{ K300,  K301,  K302,  K303,  K304,  K305,  K306,  K307,  K308,  K309,  K310,  KC_NO, K312,  K313,  K314 }, \
 	{ K400,  K401,  K402,  KC_NO, KC_NO, K405,  KC_NO, KC_NO, KC_NO, K409,  K410,  KC_NO, K412,  K413,  K414 }  \
 }
-
-enum keyboard_keycodes {
-#ifdef VIA_ENABLE
-    LOCK_GUI = USER00,
-    NEW_SAFE_RANGE = SAFE_RANGE  // Important!
-#else
-    LOCK_GUI = SAFE_RANGE,
-    NEW_SAFE_RANGE   // Important!
-#endif
-};
