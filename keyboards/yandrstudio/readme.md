@@ -121,7 +121,7 @@ A creative coder.
 | mu80pad         | 0xAA96    | 0xAA7C                   | F103, RGB, Hotswap, Split right  | &check;           |
 | infi75          | 0xAA96    | 0xAA7D                   | F103, RGB, Hotswap, Encoder      | &check;           |
 | gwydd65         | 0xAA96    | 0xAA7E                   | F103, Multi-lauout, Hotswap      | &check;           |
-| razor65         | 0xAA96    | 0xAA7F                   | F103, RGB, Hotswap               | &check;           |
+| razor65         | 0xAA96    | 0xAA7F(shadow of 0xAA88) | F103, RGB, Hotswap               | &check;           |
 | answer65        | 0xAA96    | 0xAAB1                   | BLE, Hotswap                     | &check;           |
 | zhou68          | 0xAA96    | 0xAAB2                   | BLE, Hotswap, RGB, TFT, Tian68   | &check;           |
 | starAlice       | 0xAA96    | 0xAAB3                   | Hotswap, RGB, TFT, Alice         | &check;           |

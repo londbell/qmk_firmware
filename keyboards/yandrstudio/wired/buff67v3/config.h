@@ -26,7 +26,7 @@
 #if PRODUCT_YR_ID == 2
 #   define MATRIX_COL_PINS {  B5,  B6,  B7,  B8,  B9,  C13, C14, B0,  B1,  B2,  B10, B11, B12, A15, B4 }
 #elif PRODUCT_YR_ID == 3
-#   define MATRIX_COL_PINS {  B11, B12, B13, B14, B15, A9,  A10, B3,  B4,  B5,  B6,  B7,  A5,  A6,  B7 }
+#   define MATRIX_COL_PINS {  B11, B12, B13, B14, B15, A9,  A10, B3,  B4,  B5,  B6,  B7,  A5,  A6,  A7 }
 #else
 #   define MATRIX_COL_PINS {  B5,  B6,  B7,  B8,  B9,  C13, C14, B0,  B1,  B2,  B10, B11, B12, A15, B3 }
 #endif
