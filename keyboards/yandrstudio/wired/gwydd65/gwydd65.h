@@ -3,20 +3,20 @@
 #pragma once
 
 #include "quantum.h"
-#if defined(KEYBOARD_yandrstudio_wired_point65_rev1)
+#if defined(KEYBOARD_yandrstudio_wired_gwydd65_rev1)
     #include "rev1.h"
 #else
     #include "rev2.h"
 #endif
 
 enum keyboard_keycodes {
-    LOCK_GUI = QK_KB,
-    TOG_MACOS_KEYMAP,
-    KC_MISSION_CONTROL,
-    KC_LAUNCHPAD
+    LOCK_GUI_MAC = QK_KB,
+    TOG_MACOS_KEYMAP_MAC,
+    KC_MISSION_CONTROL_MAC,
+    KC_LAUNCHPAD_MAC
 };
 
-#define KC_LG    LOCK_GUI
-#define KC_MACOS TOG_MACOS_KEYMAP
-#define KC_MCTL  KC_MISSION_CONTROL
-#define KC_LPAD  KC_LAUNCHPAD
+#define MKC_LG    LOCK_GUI_MAC
+#define MKC_MACOS TOG_MACOS_KEYMAP_MAC
+#define MKC_MCTL  KC_MISSION_CONTROL_MAC
+#define MKC_LPAD  KC_LAUNCHPAD_MAC
