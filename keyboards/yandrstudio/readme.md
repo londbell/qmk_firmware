@@ -126,6 +126,7 @@ A creative coder.
 | zhou68          | 0xAA96    | 0xAAB2                   | BLE, Hotswap, RGB, TFT, Tian68   | &check;           |
 | starAlice       | 0xAA96    | 0xAAB3                   | Hotswap, RGB, TFT, Alice         | &check;           |
 | npad            | 0xAA96    | 0xAAB4                   | BLE, Hotswap, RGB                | &check;           |
+| u80             | 0xAA96    | 0xAAB5                   | Hotswap                          | &check;           |
 
 
 
