@@ -6,6 +6,28 @@
         "rows": 15,
         "cols": 9
     },
+    "customKeycodes": [
+        {
+            "name": "Toggle WinKey Lock",
+            "title": "Toggle WinKey Lock",
+            "shortName": "WinLock"
+        },
+        {
+            "name": "Toggle macOS Keymap",
+            "title": "Toggle macOS Keymap",
+            "shortName": "TogMacOS"
+        },
+        {
+            "name": "Mission Control",
+            "title": "Mission Control in macOS",
+            "shortName": "Mission Control"
+        },
+        {
+            "name": "Launch Pad",
+            "title": "Launch Pad in macOS",
+            "shortName": "Launch Pad"
+        }
+    ],
     "layouts": {
         "keymap": [
             [
