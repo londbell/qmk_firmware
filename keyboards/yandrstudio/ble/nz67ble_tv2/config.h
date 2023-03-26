@@ -151,7 +151,6 @@
 
 #endif
 
-#define HOLD_ON_OTHER_KEY_PRESS
 #define TAP_HOLD_CAPS_DELAY 200
 
 // for ble

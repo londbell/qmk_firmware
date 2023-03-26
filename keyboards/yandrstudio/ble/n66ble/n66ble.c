@@ -40,6 +40,19 @@ led_config_t g_led_config = {
       2,2,2,2
     }
 };
+ 
+
+// globol
+typedef union {
+    uint32_t raw;
+    struct
+    {
+        bool  head_sw : 1;
+        bool  key_sw : 1;
+    } rgbsw;
+    
+} kb_cstm_config_t;
+kb_cstm_config_t kb_cstm_config;
 
 
 // rgb matrix layer
@@ -104,6 +117,18 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
         return false;
     }
+
+    if (rgb_matrix_is_enabled()) {
+        for (uint8_t i = led_min; i < led_max; ++i) {
+            if (g_led_config.flags[i] == 4 && !kb_cstm_config.rgbsw.key_sw) {
+                rgb_matrix_set_color(i, 0, 0, 0);
+            }
+            if (g_led_config.flags[i] == 2 && !kb_cstm_config.rgbsw.head_sw) {
+                rgb_matrix_set_color(i, 0, 0, 0);
+            }
+        }
+    }
+
     rgb_matrix_adv_blink_layer_repeat_helper();
     rgb_matrix_adv_set_layer_state(10, host_keyboard_led_state().caps_lock);
     // If not enabled, then nothing else will actually set the LEDs...
@@ -155,7 +180,16 @@ bool ble_led_update_kb(uint8_t channle, uint8_t state) {
     return true;
 }
 
+void eeconfig_init_kb(void) {
+    kb_cstm_config.raw = 0;
+    kb_cstm_config.rgbsw.head_sw = true;
+    kb_cstm_config.rgbsw.key_sw = true;
+    eeconfig_update_kb(kb_cstm_config.raw);
+}
+
 void keyboard_post_init_kb(void) {
+    kb_cstm_config.raw = eeconfig_read_kb();
+    rgb_matrix_reload_from_eeprom();
     rgb_matrix_layers = my_rgb_matrix_layers;
 }
 
@@ -167,7 +201,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
     switch (keycode) {
-        case KC_LG:
+        case MKC_LG:
             if (record->event.pressed) {
                 process_magic(GUI_TOG, record);
             }
@@ -189,20 +223,32 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             }
         }
             return false;
+        case TK_RGB:
+            if (rgb_matrix_config.enable && record->event.pressed) {
+                kb_cstm_config.rgbsw.key_sw ^= 1;
+                eeconfig_update_kb(kb_cstm_config.raw);
+            }
+            return false;
+        case TH_RGB:
+            if (rgb_matrix_config.enable && record->event.pressed) {
+                kb_cstm_config.rgbsw.head_sw ^= 1;
+                eeconfig_update_kb(kb_cstm_config.raw);
+            }
+            return false;
 #endif
-        case KC_MACOS:
+        case MKC_MACOS:
             if (record->event.pressed) {
                 process_magic(CG_TOGG, record);
             }
             return false;
-        case KC_MCTL:
+        case MKC_MCTL:
             if (record->event.pressed) {
                 host_consumer_send(0x29F);
             } else {
                 host_consumer_send(0);
             }
             return false;
-        case KC_LPAD:
+        case MKC_LPAD:
             if (record->event.pressed) {
                 host_consumer_send(0x2A0);
             } else {

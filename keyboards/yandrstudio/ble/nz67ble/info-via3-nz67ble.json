@@ -1,7 +1,7 @@
 {
-    "name": "N66BLE_JOJO_Y&R",
+    "name": "NZ67BLE_Y&R",
     "vendorId": "0xAA96",
-    "productId": "0xAA72",
+    "productId": "0xAA8B",
     "keycodes": ["qmk_lighting"],
     "menus": ["qmk_rgb_matrix"],
     "customKeycodes": [
@@ -11,9 +11,9 @@
             "shortName": "WinLock"
         },
         {
-            "name": "Battery Level",
-            "title": "Show battery level light",
-            "shortName": "BAT_SHOW"
+            "name": "Toggle Key/Under RGB",
+            "title": "Toggle Key/Under RGB",
+            "shortName": "RGB_K_U"
         },
         {
             "name": "Toggle macOS Keymap",
@@ -31,14 +31,9 @@
             "shortName": "Launch Pad"
         },
         {
-            "name": "Toggle Key RGB",
-            "title": "Toogle Key RGB, RGB need in using",
-            "shortName": "TK_RGB"
-        },
-        {
-            "name": "Toggle Head RGB",
-            "title": "Toogle Head RGB, RGB need in using",
-            "shortName": "TH_RGB"
+            "name": "Swap GUI and Ctrl",
+            "title": "Swap GUI and Ctrl",
+            "shortName": "CG_TOG"
         }
     ],
     "matrix": {
@@ -46,6 +41,14 @@
         "cols": 15
     },
     "layouts": {
+        "presets": {
+            "default": [
+                0
+            ]
+        },
+        "labels": [
+            "Encoder"
+        ],
         "keymap": [
             [
                 {
@@ -73,7 +76,8 @@
                     "w": 2
                 },
                 "0,13",
-                "0,14"
+                "0,14\n\n\n0,0",
+                "0,14\n\n\n0,1\n\n\n\n\n\ne0"
             ],
             [
                 {
@@ -150,42 +154,55 @@
                 "3,9",
                 "3,10",
                 {
-                    "c": "#777777"
-                },
-                "3,11",
-                {
                     "c": "#aaaaaa",
                     "f": 1,
                     "w": 1.75
                 },
+                "3,12",
+                {
+                    "c": "#777777",
+                    "f": 3
+                },
                 "3,13",
                 {
-                    "f": 3
+                    "c": "#aaaaaa"
                 },
                 "3,14"
             ],
             [
                 {
-                    "x": 1.75
+                    "w": 1.25
+                },
+                "4,0",
+                {
+                    "w": 1.25
                 },
                 "4,1",
+                {
+                    "w": 1.25
+                },
                 "4,2",
                 {
                     "c": "#cccccc",
                     "w": 6.25
                 },
-                "4,3",
+                "4,5",
                 {
                     "c": "#aaaaaa",
                     "w": 1.25
                 },
                 "4,9",
                 {
-                    "c": "#777777"
+                    "w": 1.25
                 },
                 "4,10",
-                "4,11",
-                "4,13"
+                {
+                    "x": 0.5,
+                    "c": "#777777"
+                },
+                "4,12",
+                "4,13",
+                "4,14"
             ]
         ]
     }

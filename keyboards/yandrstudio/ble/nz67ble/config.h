@@ -15,14 +15,12 @@
  */
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0xAA96
 #define PRODUCT_ID 0xAA8B
 #define DEVICE_VER 0x0001
-#define MANUFACTURER Y& R
-#define PRODUCT nz67ble
+#define MANUFACTURER "Y&R"
+#define PRODUCT "nz67ble"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -74,10 +72,7 @@
         { B9 }
 #    define ENCODERS_PAD_B \
         { B8 }
-
-#    define ENCODER_RESOLUTIONS \
-        { 4 }
-
+#    define ENCODER_DEFAULT_POS 0x3
 #endif
 
 // #define NO_UNDER_RGB
@@ -91,7 +86,7 @@
 #    else
 #        define RGBLED_NUM 67
 #    endif
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
 #    define RGB_MATRIX_STARTUP_VAL 200
@@ -136,16 +131,19 @@
 #    define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
 #    define ENABLE_RGB_MATRIX_CYCLE_PINWHEEL
 #    define ENABLE_RGB_MATRIX_CYCLE_SPIRAL
+
 #    define ENABLE_RGB_MATRIX_DUAL_BEACON
 #    define ENABLE_RGB_MATRIX_RAINBOW_BEACON
 #    define ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
 #    define ENABLE_RGB_MATRIX_RAINDROPS
-#    define ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
+
 #    define ENABLE_RGB_MATRIX_HUE_BREATHING
 #    define ENABLE_RGB_MATRIX_HUE_PENDULUM
 #    define ENABLE_RGB_MATRIX_HUE_WAVE
-#    define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
+#    define ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
 #    define ENABLE_RGB_MATRIX_PIXEL_RAIN
+/*蓝牙下存在问题*/
+// #    define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
 
 #endif
 
@@ -176,8 +174,6 @@
 #    define RGBLIGHT_EFFECT_ALTERNATING
 #    define RGBLIGHT_EFFECT_RGB_TEST
 #    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
-
-#    define BleGetChannleEnable
 
 #endif
 
