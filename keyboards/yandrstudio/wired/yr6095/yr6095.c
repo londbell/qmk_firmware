@@ -36,8 +36,6 @@ void keyboard_post_init_kb(void) {
     rgblight_reload_from_eeprom();
     rgblight_layers = my_rgb_layers;
     keyboard_post_init_user();
-    debug_enable = true;
-    debug_matrix = true;
 }
 
 #endif
