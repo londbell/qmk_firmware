@@ -21,6 +21,7 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Y&R"
 #define PRODUCT         "yr80"
+// #define PRODUCT         "alina"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
