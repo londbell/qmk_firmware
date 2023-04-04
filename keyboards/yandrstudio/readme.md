@@ -127,6 +127,7 @@ A creative coder.
 | starAlice       | 0xAA96    | 0xAAB3                   | Hotswap, RGB, TFT, Alice         | &check;           |
 | npad            | 0xAA96    | 0xAAB4                   | BLE, Hotswap, RGB                | &check;           |
 | u80             | 0xAA96    | 0xAAB5                   | Hotswap                          | &check;           |
+| dbp40           | 0xAA96    | 0xAAB6                   | BLE, Hotswap                     | &check;           |
 
 
 
