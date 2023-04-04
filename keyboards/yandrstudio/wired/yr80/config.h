@@ -20,8 +20,14 @@
 #define PRODUCT_ID      0xAA0D
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Y&R"
+
+#define PRODUCT_YR_ID   3
+// for hyperboring
 #define PRODUCT         "yr80"
+// #define PRODUCT_YR_ID   2
 // #define PRODUCT         "alina"
+// #define PRODUCT_YR_ID   1
+// #define PRODUCT         "yr80"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -30,9 +36,15 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
+#if PRODUCT_YR_ID == 3
+//                           0    1    2    3    4   5   6   7   8   9   10  11  12  13  14  15  16
+#   define MATRIX_COL_PINS { A8,  A9,  A10, A15, B3, B4, B5, A1, A2, A3, A4, A5, A6, A0, B1, B2, B10 }
+#   define MATRIX_ROW_PINS { B12, B13, B14, B15, B6, B0 }
+#else
 //                        0    1    2    3    4    5    6   7    8    9    10   11   12   13    14   15   16
-#define MATRIX_COL_PINS { B12, B13, B14, A15, B3,  B4,  B5, B0,  A5,  A4,  A3,  A1,  A2,  B11,  B1,  B2,  B10 }
-#define MATRIX_ROW_PINS { B15, B6,  B7,  B8,  B9,  A6 }
+#   define MATRIX_COL_PINS { B12, B13, B14, A15, B3,  B4,  B5, B0,  A5,  A4,  A3,  A1,  A2,  B11,  B1,  B2,  B10 }
+#   define MATRIX_ROW_PINS { B15, B6,  B7,  B8,  B9,  A6 }
+#endif
 
 #define TAP_CODE_DELAY 15
 
@@ -45,7 +57,6 @@
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_VAL_STEP 5
 #    define RGBLIGHT_LIMIT_VAL 200
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED true
 #    define RGBLIGHT_ANIMATIONS
 
 #    define RGBLIGHT_LAYERS
