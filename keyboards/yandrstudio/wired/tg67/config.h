@@ -15,8 +15,6 @@
  */
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA8D
@@ -44,7 +42,7 @@
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #    define RGBLIGHT_VAL_STEP 5
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED
+// #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_CENTER { 112, 32 }
 #    define RGB_MATRIX_KEYPRESSES
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
