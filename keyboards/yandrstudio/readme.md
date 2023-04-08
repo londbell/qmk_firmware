@@ -42,7 +42,7 @@ A creative coder.
 | whitemouse69    | 0xAA96    | 0xAAA4                   | F401, RGB                        | &check;           |
 | wave87          | 0xAA96    | 0xAAA5                   | F401, RGB                        | &check;           |
 | m69             | 0xAA96    | 0xAAA6                   | F401,80%, RGB, Hotswap           | &check;           |
-| m69             | 0xAA96    | 0xAAB6                   | F401,80%, RGB, Solder            | &check;           |
+| m69             | 0xAA96    | 0xAAB6(discard)          | F401,80%, RGB, Solder            | &check;           |
 | zhou75          | 0xAA96    | 0xAAA7                   | F401, ENCODER, Hotswap           | &check;           |
 |                 |           | 0xAAB7                   | F401, ENCODER, Solder            | &check;           |
 | yp87ble         | 0xAA96    | 0xAAA8                   | BLE 5.0 Dual mode                | &cross;           |
@@ -128,7 +128,7 @@ A creative coder.
 | npad            | 0xAA96    | 0xAAB4                   | BLE, Hotswap, RGB                | &check;           |
 | u80             | 0xAA96    | 0xAAB5                   | Hotswap                          | &check;           |
 | dbp40           | 0xAA96    | 0xAAB6                   | BLE, Hotswap                     | &check;           |
-
+| y8              | 0xAA96    | 0xAAB8                   | Hotswap                          | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
