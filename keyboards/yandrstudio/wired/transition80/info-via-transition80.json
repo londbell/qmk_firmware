@@ -14,6 +14,11 @@
             "shortName": "TogMacOS"
         },
         {
+            "name": "Swap GUI and Ctrl",
+            "title": "Swap GUI and Ctrl",
+            "shortName": "CG_TOG"
+        },
+        {
             "name": "Mission Control",
             "title": "Mission Control in macOS",
             "shortName": "Mission Control"

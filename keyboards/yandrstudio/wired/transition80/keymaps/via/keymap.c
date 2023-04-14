@@ -4,16 +4,18 @@
 #include QMK_KEYBOARD_H
 
 enum keyboard_keycodes {
-    LOCK_GUI = QK_USER,
+    LOCK_GUI = QK_KB,
     TOG_MACOS_KEYMAP,
+    TOG_CGTOP,
     KC_MISSION_CONTROL_MAC,
     KC_LAUNCHPAD_MAC
 };
 
-#define KC_LG    LOCK_GUI
-#define KC_MACOS TOG_MACOS_KEYMAP
-#define KC_MCTL  KC_MISSION_CONTROL_MAC
-#define KC_LPAD  KC_LAUNCHPAD_MAC
+#define MKC_LG    LOCK_GUI
+#define MKC_MACOS TOG_MACOS_KEYMAP
+#define MKC_CGT   TOG_CGTOP
+#define MKC_MCTL  KC_MISSION_CONTROL_MAC
+#define MKC_LPAD  KC_LAUNCHPAD_MAC
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
@@ -24,12 +26,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,          KC_Z,    KC_X,    KC_C,   KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM,KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,
         KC_LCTL, KC_LGUI, KC_LALT,                           KC_SPC,                            KC_RALT, MO(1),   KC_APP,  KC_RCTL, KC_LEFT, KC_DOWN, KC_RIGHT),
     [1] = LAYOUT(
-        KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MACOS,KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_LG,   KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+        KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,          KC_TRNS, KC_TRNS, MKC_CGT, KC_TRNS, KC_TRNS, KC_TRNS, MKC_MACOS,KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, MKC_LG,  KC_TRNS,                            KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
     [2] = LAYOUT(
         KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -49,24 +51,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
-        case KC_LG:
+        case MKC_LG:
             if (record->event.pressed) {
                 process_magic(GUI_TOG, record);
             }
             return false;
-        case KC_MACOS:
+        case MKC_MACOS:
+            if (record->event.pressed) {
+                process_magic(AG_TOGG, record);
+            }
+            return false;
+        case MKC_CGT:
             if (record->event.pressed) {
                 process_magic(CG_TOGG, record);
             }
             return false;
-        case KC_MCTL:
+        case MKC_MCTL:
             if (record->event.pressed) {
                 host_consumer_send(0x29F);
             } else {
                 host_consumer_send(0);
             }
             return false;
-        case KC_LPAD:
+        case MKC_LPAD:
             if (record->event.pressed) {
                 host_consumer_send(0x2A0);
             } else {
