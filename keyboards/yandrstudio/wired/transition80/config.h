@@ -8,7 +8,7 @@
 #define PRODUCT_ID      0xAA6F
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "swagkeys_Y&R"
-#define PRODUCT         "transition"
+#define PRODUCT         "Transition TKL"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
