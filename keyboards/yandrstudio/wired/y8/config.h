@@ -8,7 +8,7 @@
 #define PRODUCT_ID      0xAAB8
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Y&R"
-#define PRODUCT         "y8"
+#define PRODUCT         "Y·8"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
