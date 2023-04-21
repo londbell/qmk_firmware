@@ -1,5 +1,5 @@
 {
-    "name": "Y·8",
+    "name": "Y\u00b78",
     "vendorId": "0xAA96",
     "productId": "0xAAB8",
     "customKeycodes": [
@@ -46,7 +46,7 @@
             "ISO Enter",
             "Split Left Shift",
             "Split Right Shift",
-            ["Space", "TK", "Solder WKL", "Hotswap WKL"]
+            ["Space", "Solder TK", "Solder WKL", "Hotswap WKL"]
         ],
         "keymap": [
             [
