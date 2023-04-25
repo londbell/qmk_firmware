@@ -23,7 +23,7 @@
 
 #define PRODUCT_YR_ID   3
 // for hyperboring
-#define PRODUCT         "yr80"
+#define PRODUCT         "HYPERBORING TKL"
 // #define PRODUCT_YR_ID   2
 // #define PRODUCT         "alina"
 // #define PRODUCT_YR_ID   1
