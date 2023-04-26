@@ -129,7 +129,14 @@ A creative coder.
 | u80             | 0xAA96    | 0xAAB5                   | Hotswap                          | &check;           |
 | dbp40           | 0xAA96    | 0xAAB6                   | BLE, Hotswap                     | &check;           |
 | y8              | 0xAA96    | 0xAAB8                   | Hotswap                          | &check;           |
-| s170            | 0xAA96    | 0xAAB9                   | Hotswap                          | &check;           |
+| sonic170        | 0xAA96    | 0xAAB9                   | Hotswap                          | &check;           |
+| lin70           | 0xAA96    | 0xAABA                   | Hotswap, BLE                     | &check;           |
+| ji98            | 0xAA96    | 0xAABB                   | Hotswap, BLE, TFT                | &check;           |
+| cray65          | 0xAA96    | 0xAABC                   | Hotswap, BLE, TFT                | &check;           |
+| ckw75           | 0xAA96    | 0xAABD                   | Hotswap, BLE                     | &check;           |
+| dmk87           | 0xAA96    | 0xAABE                   | Hotswap, BLE, RGB(is)            | &check;           |
+| g80             | 0xAA96    | 0xAABF                   | Hotswap, RGB                     | &check;           |
+
 
 
 ### Obsolete or Test keyboard for reference design only
