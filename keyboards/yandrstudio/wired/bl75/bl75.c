@@ -76,7 +76,7 @@ void keyboard_post_init_kb(void) {
 
 void keyboard_post_init_kb(void) {
     rgblight_reload_from_eeprom();
-#    ifdef FACTORY_TEST_RGB
+#    ifdef FACTORY_TEST
     rgblight_enable_noeeprom();
     rgblight_mode_noeeprom(RGBLIGHT_MODE_RGB_TEST);
 #    endif

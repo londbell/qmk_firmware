@@ -105,7 +105,7 @@
 
 #endif
 
-#define FACTORY_TEST_RGB
+#define FACTORY_TEST
 
 #ifdef RGBLIGHT_ENABLE
 #    define RGB_DI_PIN A7
@@ -113,7 +113,7 @@
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_VAL_STEP 10
 
-#    ifdef FACTORY_TEST_RGB
+#    ifdef FACTORY_TEST
 
 #    define RGBLIGHT_LIMIT_VAL 80
 #    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RGB_TEST)

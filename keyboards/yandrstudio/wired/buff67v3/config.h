@@ -42,6 +42,8 @@
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 8
 
+#define FACTORY_TEST
+
 #ifdef RGBLIGHT_ENABLE
 #   if PRODUCT_YR_ID == 2
 #       define RGB_DI_PIN B3
@@ -59,6 +61,14 @@
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_VAL_STEP 10
+
+#    ifdef FACTORY_TEST
+
+#    define RGBLIGHT_LIMIT_VAL 80
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RGB_TEST)
+#    define RGBLIGHT_EFFECT_RGB_TEST
+
+#    else
 #    define RGBLIGHT_LIMIT_VAL 200
 #    define RGBLIGHT_ANIMATIONS
 
@@ -80,6 +90,8 @@
 #    define RGBLIGHT_LAYERS
 #    define RGBLIGHT_LAYERS_RETAIN_VAL
 #    define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+
+#    endif
 
 #endif
 

@@ -5,6 +5,8 @@
 
 #ifdef RGBLIGHT_ENABLE
 
+#   ifndef FACTORY_TEST
+
 #if PRODUCT_YR_ID == 3
 const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_RED});
 #else
@@ -22,5 +24,7 @@ void keyboard_post_init_kb(void) {
     rgblight_reload_from_eeprom();
     rgblight_layers = my_rgb_layers;
 }
+
+#   endif
 
 #endif
