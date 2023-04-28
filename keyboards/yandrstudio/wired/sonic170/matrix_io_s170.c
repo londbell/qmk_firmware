@@ -22,22 +22,13 @@
 #include "quantum.h"
 #include "gpio.h"
 
-#    include "split_common/split_util.h"
-#    include "split_common/transactions.h"
 
-#    define ROWS_PER_HAND_SP (MATRIX_ROWS / 2)
+#   ifdef USE_BOTH_595_AND_GPIO
+const pin_t col_pins[MATRIX_COLS] = MATRIX_COL_PINS;
+#   endif
+const pin_t row_pins[MATRIX_ROWS] = MATRIX_ROW_PINS;
+const uint8_t mask_of_each_595[MATRIX_ROWS][2][2] = MATRIX_OF_74HC595;
 
-
-// row offsets for each hand
-uint8_t thisHand, thatHand;
-
-#ifdef USE_BOTH_595_AND_GPIO
-static pin_t col_pins[MATRIX_COLS] = MATRIX_COL_PINS;
-#endif
-static pin_t row_pins[ROWS_PER_HAND_SP] = MATRIX_ROW_PINS;
-
-#ifdef I_AM_LEFT
-static uint8_t mask_of_each_595[NUM_OF_74HC595][MATRIX_COLS] = MATRIX_OF_74HC595;
 
 const uint8_t sr_zero = SR_74HC595_ZERO_ONEP;
 
@@ -64,87 +55,50 @@ static void shift_out_single(uint8_t value) {
         writePinHigh(SPI_SCK_PIN_OF_595);
     }
 }
-#endif
-
-
-
-// matrix code
 
 
 static void select_col(uint8_t col) {
-#if defined(USE_BOTH_595_AND_GPIO) || defined(I_AM_RIGHT)
+    if (col > 14) return;
+#   ifdef USE_BOTH_595_AND_GPIO
     if (col_pins[col] != NO_PIN) {
         writePinHigh(col_pins[col]);
         return;
     }
-#endif
-
-#ifdef I_AM_LEFT
-    uint8_t i = 0;
-    writePinLow(SPI_74HC595_CS);
-    for (i = 0; i < NUM_OF_74HC595; ++i) {
-        shift_out_single(mask_of_each_595[i][col]);
-    }
-    writePinHigh(SPI_74HC595_CS);
-#endif
+#   endif
 }
 
 static void unselect_cols(void) {
     uint8_t i = 0;
-#if defined(USE_BOTH_595_AND_GPIO) || defined(I_AM_RIGHT)
+#   ifdef USE_BOTH_595_AND_GPIO
     for (i = 0; i < MATRIX_COLS; ++i) {
         if (col_pins[i] != NO_PIN) {
             writePinLow(col_pins[i]);
         }
     }
-#endif
+#   endif
 
-#ifdef I_AM_LEFT
     writePinLow(SPI_74HC595_CS);
     for (i = 0; i < NUM_OF_74HC595; ++i) {
         shift_out_single(sr_zero);
     }
     writePinHigh(SPI_74HC595_CS);
-#endif
 }
 
 static void unselect_rows(void) {
-    for (uint8_t x = 0; x < ROWS_PER_HAND_SP; x++) {
-        if (row_pins[x] != NO_PIN) {
-            setPinInputLow(row_pins[x]);
-        }
+    for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
+        setPinInputLow(row_pins[x]);
     }
+    setPinInputLow(ROW_AUX_READ_PIN);
 }
 
 static void init_pins(void) {
-#ifdef I_AM_LEFT
     setPinOutput(SPI_SCK_PIN_OF_595);
     setPinOutput(SPI_MOSI_PIN_OF_595);
     setPinOutput(SPI_74HC595_CS);
     writePinHigh(SPI_SCK_PIN_OF_595);
     writePinHigh(SPI_MOSI_PIN_OF_595);
     writePinHigh(SPI_74HC595_CS);
-#endif
-
-    // Set pinout for right half if pinout for that half is defined
-    if (!isLeftHand) {
-#    ifdef MATRIX_ROW_PINS_RIGHT
-        const pin_t row_pins_right[ROWS_PER_HAND_SP] = MATRIX_ROW_PINS_RIGHT;
-        for (uint8_t i = 0; i < ROWS_PER_HAND_SP; i++) {
-            row_pins[i] = row_pins_right[i];
-        }
-#    endif
-#    ifdef MATRIX_COL_PINS_RIGHT
-        const pin_t col_pins_right[MATRIX_COLS] = MATRIX_COL_PINS_RIGHT;
-        for (uint8_t i = 0; i < MATRIX_COLS; i++) {
-            col_pins[i] = col_pins_right[i];
-        }
-#    endif
-    }
-    thisHand = isLeftHand ? 0 : (ROWS_PER_HAND_SP);
-    thatHand = ROWS_PER_HAND_SP - thisHand;
-
-#   if defined(USE_BOTH_595_AND_GPIO) || defined(I_AM_RIGHT)
+#   ifdef USE_BOTH_595_AND_GPIO
     uint8_t i = 0;
     for (i = 0; i < MATRIX_COLS; ++i) {
         if (col_pins[i] != NO_PIN) {
@@ -156,7 +110,49 @@ static void init_pins(void) {
     unselect_cols();
 }
 
-static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col) {
+static void select_col_aux(uint8_t col_595_i, uint8_t val_595) {
+    writePinLow(SPI_74HC595_CS);
+    for (uint8_t i = 0; i < NUM_OF_74HC595; ++i) {
+        if (i == col_595_i) {
+            shift_out_single(val_595);
+        } else {
+            shift_out_single(sr_zero);
+        }
+    }
+    writePinHigh(SPI_74HC595_CS);
+}
+static bool read_rows_on_col_aux(matrix_row_t current_matrix[], uint8_t current_col) {
+    bool matrix_changed = false;
+
+    uint8_t col_595 = current_col - 15;
+    uint8_t col_595_i = 0;
+    uint8_t val_595 = sr_zero;
+    
+    for (uint8_t row_index = 0; row_index < MATRIX_ROWS; row_index++) {
+        col_595_i = mask_of_each_595[row_index][col_595][0];
+        val_595   = mask_of_each_595[row_index][col_595][1];
+        // update the 595 state
+        select_col_aux(col_595_i, val_595);
+        // Store last value of row prior to reading
+        matrix_row_t last_row_value    = current_matrix[row_index];
+        matrix_row_t current_row_value = last_row_value;
+        if (readPin(ROW_AUX_READ_PIN) == 1) {
+            current_row_value |= (MATRIX_ROW_SHIFTER << current_col);
+        } else {
+            current_row_value &= ~(MATRIX_ROW_SHIFTER << current_col);
+        }
+        if ((last_row_value != current_row_value)) {
+            matrix_changed |= true;
+            current_matrix[row_index] = current_row_value;
+        }
+    }
+    unselect_cols();
+    matrix_output_unselect_delay(current_col, matrix_changed);  // wait for all Row signals to go HIGH
+
+    return matrix_changed;
+}
+
+static bool read_rows_on_col_norm(matrix_row_t current_matrix[], uint8_t current_col) {
     bool matrix_changed = false;
 
     // Select col
@@ -164,11 +160,11 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
     matrix_output_select_delay();
 
     // For each row...
-    for (uint8_t row_index = 0; row_index < ROWS_PER_HAND_SP; row_index++) {
-        if (row_pins[row_index] == NO_PIN) continue;
+    for (uint8_t row_index = 0; row_index < MATRIX_ROWS; row_index++) {
         // Store last value of row prior to reading
         matrix_row_t last_row_value    = current_matrix[row_index];
         matrix_row_t current_row_value = last_row_value;
+
         // Check row pin state
         if (readPin(row_pins[row_index]) == 1) {
             // Pin HI, set col bit
@@ -193,7 +189,6 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
     return matrix_changed;
 }
 
-
 void matrix_init_custom(void) {
     // initialize key pins
     init_pins();
@@ -201,9 +196,15 @@ void matrix_init_custom(void) {
 
 uint8_t matrix_scan_custom(matrix_row_t current_matrix[]) {
     bool changed = false;
+
     // Set col, read rows
     for (uint8_t current_col = 0; current_col < MATRIX_COLS; current_col++) {
-        changed |= read_rows_on_col(current_matrix, current_col);
+        if (current_col <= 14) {
+            changed |= read_rows_on_col_norm(current_matrix, current_col);
+        } else {
+            changed |= read_rows_on_col_aux(current_matrix, current_col);
+        }
     }
+
     return (uint8_t)changed;
 }

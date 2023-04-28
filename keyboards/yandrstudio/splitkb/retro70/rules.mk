@@ -30,4 +30,4 @@ SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = bitbang
 
 CUSTOM_MATRIX = lite
-QUANTUM_SRC += matrix_io_sp.c 74hc595_io.c
+QUANTUM_SRC += matrix_io_sp.c
