@@ -20,3 +20,9 @@
 
 #undef HAL_USE_PWM
 #define HAL_USE_PWM    TRUE
+
+#undef PAL_USE_CALLBACKS
+#define PAL_USE_CALLBACKS TRUE
+
+#undef PAL_USE_WAIT
+#define PAL_USE_WAIT TRUE

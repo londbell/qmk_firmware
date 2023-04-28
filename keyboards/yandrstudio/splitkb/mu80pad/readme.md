@@ -14,11 +14,11 @@ Make example for this keyboard (after setting up your build environment):
 
 for left part:
 
-    make yandrstudio/wired/mu80pad/leftkb:via
+    make yandrstudio/splitkb/mu80pad/leftkb:via
     
 for right part:
 
-    make yandrstudio/wired/mu80pad/rightkb:via
+    make yandrstudio/splitkb/mu80pad/rightkb:via
 
 
 See [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) then the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information.

@@ -6,35 +6,31 @@
 #include "quantum.h"
 
 #define LAYOUT( \
-    L500,  L501,  L502,  L503,  L504,  L505,  L506,                       \
-    L400,  L401,  L402,  L403,  L404,  L405,  L406,                       \
-    L300,  L301,  L302,  L303,  L304,  L305,                              \
-    L200,  L201,  L202,  L203,  L204,  L205,  L206,                       \
-    L100,  L101,  L102,  L103,  L104,                                     \
-                                              L005,   L006,               \
-                                                      L004,               \
-                                       L003,  L002,   L001,               \
-                                                                          \
-           R116,  R115,  R114,  R113,  R112,  R111,  R110,                \
-           R106,  R105,  R104,  R103,  R102,  R101,  R100,                \
-                  R905,  R904,  R903,  R902,  R901,  R900,                \
-           R806,  R805,  R804,  R803,  R802,  R801,  R800,                \
-                         R704,  R703,  R702,  R701,  R700,                \
-    R606,  R605,                                                          \
-    R604,                                                                 \
-    R601,  R602,  R603                                                    \
+    L000, L001,  L002,  L003,  L004,  L005,  L006, L007, L008, L009, L010, L011, L012, L013, L014, L015, L016, \
+    L100, L101,  L102,  L103,  L104,  L105,  L106, L107, L108, L109, L110, L111, L112, L113, L114, L115, L116, \
+    L200, L201,  L202,  L203,  L204,  L205,  L206, L207, L208, L209, L210, L211, L212, L213, L214, L215, L216, \
+    L300, L301,  L302,  L303,  L304,  L305,  L306, L307, L308, L309, L310, L311,       L313,                   \
+    L400, L401,  L402,  L403,  L404,  L405,  L406, L407, L408, L409, L410,       L412,             L415,       \
+    L500, L501,  L502,  L503,                                              L511, L512, L513, L514, L515, L516, \
+    \
+    R000, R001,  R002,  R003, \
+    R100, R101,  R102,  R103, \
+    R200, R201,  R202,  R203, \
+    R300, R301,  R302,        \
+    R400, R401,  R402,  R403, \
+    R500,        R502         \
 ) { \
-	{ KC_NO, L001,  L002,  L003,  L004,  L005,  L006  }, \
-	{ L100,  L101,  L102,  L103,  L104,  KC_NO, KC_NO }, \
-	{ L200,  L201,  L202,  L203,  L204,  L205,  L206  }, \
-	{ L300,  L301,  L302,  L303,  L304,  L305,  KC_NO }, \
-	{ L400,  L401,  L402,  L403,  L404,  L405,  L406  }, \
-	{ L500,  L501,  L502,  L503,  L504,  L505,  L506  }, \
-                                                         \
-    { KC_NO, R601,  R602,  R603,  R604,  R605,  R606  }, \
-    { R700,  R701,  R702,  R703,  R704,  KC_NO, KC_NO }, \
-    { R800,  R801,  R802,  R803,  R804,  R805,  R806  }, \
-    { R900,  R901,  R902,  R903,  R904,  R905,  KC_NO }, \
-    { R100,  R101,  R102,  R103,  R104,  R105,  R106  }, \
-    { R110,  R111,  R112,  R113,  R114,  R115,  R116  }  \
+	{ L000, L001,  L002,  L003,  L004,   L005,   L006,   L007,   L008,   L009,   L010,   L011,  L012,  L013,  L014,  L015,  L016 },  \
+	{ L100, L101,  L102,  L103,  L104,   L105,   L106,   L107,   L108,   L109,   L110,   L111,  L112,  L113,  L114,  L115,  L116 },  \
+	{ L200, L201,  L202,  L203,  L204,   L205,   L206,   L207,   L208,   L209,   L210,   L211,  L212,  L213,  L214,  L215,  L216 },  \
+	{ L300, L301,  L302,  L303,  L304,   L305,   L306,   L307,   L308,   L309,   L310,   L311,  KC_NO, L313,  KC_NO, KC_NO, KC_NO }, \
+	{ L400, L401,  L402,  L403,  L404,   L405,   L406,   L407,   L408,   L409,   L410,   KC_NO, L412,  KC_NO, KC_NO, L415,  KC_NO }, \
+	{ L500, L501,  L502,  L503,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  L511,  L512,  L513,  L514,  L515,  L516 },  \
+    \
+	{ R000, R001,  R002,  R003,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }, \
+	{ R100, R101,  R102,  R103,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }, \
+	{ R200, R201,  R202,  R203,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }, \
+	{ R300, R301,  R302,  KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }, \
+	{ R400, R401,  R402,  R403,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }, \
+	{ R500, KC_NO, R502,  KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO }  \
 }

@@ -32,18 +32,23 @@
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
+#define WEAR_LEVELING_BACKING_SIZE 4096
+#define WEAR_LEVELING_LOGICAL_SIZE 2048
+
 /* RGN Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
 #    define RGB_MATRIX_SPLIT {114, 21}
+
 #ifdef I_AM_LEFT
 #    define RGB_DI_PIN B3
 #else
 #    define RGB_DI_PIN A3
 #endif
-#    define RGB_MATRIX_LED_COUNT 135
 
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
+#    define RGB_MATRIX_LED_COUNT 160
+
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #    define RGBLIGHT_VAL_STEP 5
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_CENTER { 112, 32 }
@@ -96,6 +101,19 @@
 #   define ENABLE_RGB_MATRIX_MULTISPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+#endif
+
+#ifdef WS2812_DRIVER_PWM
+
+#    define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_CHANNEL 2  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+
+#ifdef I_AM_LEFT
+#    define WS2812_PWM_CHANNEL 2  // default: 2
+#else
+#    define WS2812_PWM_CHANNEL 4  // default: 2
+#endif
 
 
 #endif
@@ -115,6 +133,5 @@
 #   define SPLIT_MODS_ENABLE
 #   define SPLIT_LAYER_STATE_ENABLE
 #   define SPLIT_LED_STATE_ENABLE
-#   define SPLIT_TRANSACTION_IDS_KB KEYBOARD_CURRENT_ALPA_SYNC
 
 #endif
