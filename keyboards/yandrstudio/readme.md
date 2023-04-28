@@ -130,12 +130,14 @@ A creative coder.
 | dbp40           | 0xAA96    | 0xAAB6                   | BLE, Hotswap                     | &check;           |
 | y8              | 0xAA96    | 0xAAB8                   | Hotswap                          | &check;           |
 | sonic170        | 0xAA96    | 0xAAB9                   | Hotswap                          | &check;           |
-| lin70           | 0xAA96    | 0xAABA                   | Hotswap, BLE                     | &check;           |
+| retro70         | 0xAA96    | 0xAABA                   | Hotswap, Split KB                | &check;           |
 | ji98            | 0xAA96    | 0xAABB                   | Hotswap, BLE, TFT                | &check;           |
 | cray65          | 0xAA96    | 0xAABC                   | Hotswap, BLE, TFT                | &check;           |
 | ckw75           | 0xAA96    | 0xAABD                   | Hotswap, BLE                     | &check;           |
 | dmk87           | 0xAA96    | 0xAABE                   | Hotswap, BLE, RGB(is)            | &check;           |
 | g80             | 0xAA96    | 0xAABF                   | Hotswap, RGB                     | &check;           |
+| lin70           | 0xAA96    | 0xAAB0                   | Hotswap, BLE                     | &check;           |
+
 
 
 
