@@ -62,7 +62,6 @@ void eeconfig_init_kb(void) {
     eeconfig_update_kb(kb_cums_config.raw);
 }
 
-extern const rgb_matrix_driver_t rgb_matrix_driver;
 void keyboard_post_init_kb(void) {
     kb_cums_config.underground_rgb_sw = eeconfig_read_kb();
     rgb_matrix_reload_from_eeprom();
