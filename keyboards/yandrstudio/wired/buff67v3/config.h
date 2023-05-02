@@ -42,7 +42,7 @@
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 8
 
-#define FACTORY_TEST
+// #define FACTORY_TEST
 
 #ifdef RGBLIGHT_ENABLE
 #   if PRODUCT_YR_ID == 2
@@ -72,7 +72,7 @@
 #    define RGBLIGHT_LIMIT_VAL 200
 #    define RGBLIGHT_ANIMATIONS
 
-#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_TWINKLE+4)
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RAINBOW_SWIRL+5)
 #    define RGBLIGHT_DEFAULT_SPD 144
 #    define RGBLIGHT_DEFAULT_VAL 200
 
