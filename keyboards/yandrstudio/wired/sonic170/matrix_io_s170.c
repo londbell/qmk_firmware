@@ -121,22 +121,33 @@ static void select_col_aux(uint8_t col_595_i, uint8_t val_595) {
     }
     writePinHigh(SPI_74HC595_CS);
 }
+
+static void unselect_cols_aux(void) {
+    writePinLow(SPI_74HC595_CS);
+    for (uint8_t i = 0; i < NUM_OF_74HC595; ++i) {
+        shift_out_single(sr_zero);
+    }
+    writePinHigh(SPI_74HC595_CS);
+}
 static bool read_rows_on_col_aux(matrix_row_t current_matrix[], uint8_t current_col) {
     bool matrix_changed = false;
 
     uint8_t col_595 = current_col - 15;
     uint8_t col_595_i = 0;
     uint8_t val_595 = sr_zero;
-    
-    for (uint8_t row_index = 0; row_index < MATRIX_ROWS; row_index++) {
+    uint8_t row_index = 0;
+    for (row_index = 0; row_index < MATRIX_ROWS; row_index++) {
         col_595_i = mask_of_each_595[row_index][col_595][0];
         val_595   = mask_of_each_595[row_index][col_595][1];
         // update the 595 state
         select_col_aux(col_595_i, val_595);
+        matrix_output_select_delay();
         // Store last value of row prior to reading
         matrix_row_t last_row_value    = current_matrix[row_index];
         matrix_row_t current_row_value = last_row_value;
         if (readPin(ROW_AUX_READ_PIN) == 1) {
+            if (row_index == 0)
+                dprintf("row_id %d %d %d\n", row_index, col_595_i, val_595);
             current_row_value |= (MATRIX_ROW_SHIFTER << current_col);
         } else {
             current_row_value &= ~(MATRIX_ROW_SHIFTER << current_col);
@@ -145,9 +156,10 @@ static bool read_rows_on_col_aux(matrix_row_t current_matrix[], uint8_t current_
             matrix_changed |= true;
             current_matrix[row_index] = current_row_value;
         }
+        unselect_cols_aux();
+        matrix_output_unselect_delay(current_col, matrix_changed);  // wait for all Row signals to go HIGH
     }
-    unselect_cols();
-    matrix_output_unselect_delay(current_col, matrix_changed);  // wait for all Row signals to go HIGH
+
 
     return matrix_changed;
 }

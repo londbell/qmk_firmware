@@ -18,6 +18,8 @@ bool led_update_kb(led_t led_state) {
 }
 
 void keyboard_post_init_kb(void) {
+      debug_enable=true;
+  debug_matrix=true;
     rgblight_reload_from_eeprom();
     rgblight_layers = my_rgb_layers;
 }

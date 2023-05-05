@@ -16,7 +16,7 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-//                         0    1    2    3   4   5   6   7   8   9    10   11   12  13  14
+//                         0    1    2    3   4   5   6   7   8   9    10   11   12  13  14  15      16
 #define MATRIX_COL_PINS {  A2,  A3,  A4, A5,  A6, A7, B0, B1, B2, B10, B11, A15, B3, B4, B5, NO_PIN, NO_PIN }
 #define MATRIX_ROW_PINS {  B13, B12, A1, B14, C13 }
 
@@ -66,7 +66,7 @@
 #    define RGBLIGHT_LIMIT_VAL 200
 #    define RGBLIGHT_ANIMATIONS
 
-#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_TWINKLE+4)
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RAINBOW_SWIRL+5)
 #    define RGBLIGHT_DEFAULT_SPD 144
 #    define RGBLIGHT_DEFAULT_VAL 200
 
