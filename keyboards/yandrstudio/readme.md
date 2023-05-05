@@ -137,6 +137,7 @@ A creative coder.
 | dmk87           | 0xAA96    | 0xAABE                   | Hotswap, BLE, RGB(is)            | &check;           |
 | g80             | 0xAA96    | 0xAABF                   | Hotswap, RGB                     | &check;           |
 | lin70           | 0xAA96    | 0xAAB0                   | Hotswap, BLE                     | &check;           |
+| lui80           | 0xAA96    | 0xAAD0                   | Hotswap                          | &check;           |
 
 
 
