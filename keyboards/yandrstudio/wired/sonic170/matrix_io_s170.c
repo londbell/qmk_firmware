@@ -146,8 +146,6 @@ static bool read_rows_on_col_aux(matrix_row_t current_matrix[], uint8_t current_
         matrix_row_t last_row_value    = current_matrix[row_index];
         matrix_row_t current_row_value = last_row_value;
         if (readPin(ROW_AUX_READ_PIN) == 1) {
-            if (row_index == 0)
-                dprintf("row_id %d %d %d\n", row_index, col_595_i, val_595);
             current_row_value |= (MATRIX_ROW_SHIFTER << current_col);
         } else {
             current_row_value &= ~(MATRIX_ROW_SHIFTER << current_col);
