@@ -9,5 +9,5 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 NKRO_ENABLE = yes           # USB Nkey Rollover
 
-# CUSTOM_MATRIX = lite    # for using the A9 pin as matrix io
-# QUANTUM_SRC += matrix.c
+CUSTOM_MATRIX = lite    # for using the A9 pin as matrix io
+QUANTUM_SRC += matrix.c
