@@ -23,3 +23,6 @@
 #define PRODUCT         "Hercules80"
 
 #define TAP_HOLD_CAPS_DELAY 250
+
+#define GPIO_INPUT_PIN_DELAY 100
+#define MATRIX_IO_DELAY 100
