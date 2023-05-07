@@ -3,11 +3,14 @@
 
 #include "retro70.h"
 
+#ifdef SPLIT_KEYBOARD
+
 bool is_keyboard_left(void) {
 #ifdef I_AM_LEFT
     return true;
 #else
     return false;
 #endif
-
 }
+
+#endif

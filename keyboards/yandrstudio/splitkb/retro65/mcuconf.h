@@ -5,5 +5,8 @@
 
 #include_next <mcuconf.h>
 
+#undef STM32_PWM_USE_TIM1
+#define STM32_PWM_USE_TIM1 TRUE
+
 #undef STM32_PLLXTPRE
 #define STM32_PLLXTPRE STM32_PLLXTPRE_DIV2

@@ -5,18 +5,20 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
+// TBD
 #define PRODUCT_ID      0xAABA
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Retro_Y&R"
+#define PRODUCT         "Retro65"
 /* key matrix size */
-#define MATRIX_ROWS 10
+#define MATRIX_ROWS 5
 #define MATRIX_COLS 16
+
+
 
 //                               0      1       2       3       4       5       6       7       8       9       10      11      12      13      14      15
 #define MATRIX_COL_PINS       { NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, A4,     A3 }
 #define MATRIX_ROW_PINS       { A5,     A6,     A7,     B0,     B1 }
-#define MATRIX_COL_PINS_RIGHT { B14,    B15,    A8,     A9,     NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN }
-#define MATRIX_ROW_PINS_RIGHT { A7,     B1,     B0,     B2,     NO_PIN }
 
 
 #define USE_BOTH_595_AND_GPIO
@@ -47,20 +49,26 @@
 #define WEAR_LEVELING_BACKING_SIZE 4096
 #define WEAR_LEVELING_LOGICAL_SIZE 2048
 
-#ifdef SPLIT_KEYBOARD
+#ifdef RGBLIGHT_ENABLE
 
-// #   define MASTER_RIGHT
+#    define RGB_DI_PIN A10
+#    define RGBLED_NUM 16
 
-#   define USE_SERIAL
+#    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#    define RGBLIGHT_EFFECT_SNAKE
+#    define RGBLIGHT_EFFECT_KNIGHT
+#    define RGBLIGHT_EFFECT_CHRISTMAS
+#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#    define RGBLIGHT_EFFECT_RGB_TEST
+#    define RGBLIGHT_EFFECT_ALTERNATING
+#    define RGBLIGHT_EFFECT_TWINKLE
+#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
 
-#   define SOFT_SERIAL_PIN A10
-
-#   define SPLIT_TRANSPORT_MIRROR
-
-#   define SPLIT_USB_DETECT
-
-#   define SPLIT_MODS_ENABLE
-#   define SPLIT_LAYER_STATE_ENABLE
-#   define SPLIT_LED_STATE_ENABLE
+#    define WS2812_PWM_DRIVER PWMD1
+#    define WS2812_PWM_CHANNEL 3
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM5
+#    define WS2812_DMA_CHANNEL 5
 
 #endif

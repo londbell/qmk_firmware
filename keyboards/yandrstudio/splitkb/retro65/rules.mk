@@ -23,9 +23,8 @@ EXTRAKEY_ENABLE = yes       # Audio control and System control
 COMMAND_ENABLE = no         # Commands for debug and configuration
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 NKRO_ENABLE = yes           # USB Nkey Rollover
-
-SPLIT_KEYBOARD = yes
-SERIAL_DRIVER = bitbang
-
+RGBLIGHT_ENABLE = yes       # Enable head RGB
+WS2812_DRIVER = pwm         # WS2812 RGB Driver
+# NO_USB_STARTUP_CHECK = yes
 CUSTOM_MATRIX = lite
-QUANTUM_SRC += matrix_io_sp.c
+QUANTUM_SRC += matrix_io.c

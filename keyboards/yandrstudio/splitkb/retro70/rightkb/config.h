@@ -4,3 +4,4 @@
 #pragma once
 
 #define I_AM_RIGHT
+#define PRODUCT         "RetroF"

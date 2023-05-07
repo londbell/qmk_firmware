@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
+#include_next <halconf.h>
 
-#define I_AM_LEFT
-#define PRODUCT         "Retro70"
+#undef HAL_USE_PWM
+#define HAL_USE_PWM    TRUE

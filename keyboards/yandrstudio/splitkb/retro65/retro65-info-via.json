@@ -1,57 +1,29 @@
 {
-    "name": "Retro_Y&R",
+    "name": "Retro65_Y&R",
     "vendorId": "0xAA96",
     "productId": "0xAABA",
+    "keycodes": [
+        "qmk_lighting"
+    ],
+    "menus": [
+        "qmk_rgblight"
+    ],
     "matrix": {
-        "rows": 10,
+        "rows": 5,
         "cols": 16
     },
     "layouts": {
         "presets": {
             "default": [
-              0
+                0
             ]
-          },
-          "labels": [
+        },
+        "labels": [
             "Split Space"
-          ],
+        ],
         "keymap": [
             [
                 {
-                    "c": "#777777"
-                },
-                "5,0",
-                {
-                    "x": 0.25,
-                    "c": "#cccccc"
-                },
-                "5,1",
-                "5,2",
-                "5,3",
-                "6,0",
-                {
-                    "x": 0.25
-                },
-                "6,1",
-                "6,2",
-                "6,3",
-                "7,0",
-                {
-                    "x": 0.25
-                },
-                "7,1",
-                "7,2",
-                "7,3",
-                "8,0",
-                {
-                    "x": 0.25,
-                    "c": "#aaaaaa"
-                },
-                "8,1"
-            ],
-            [
-                {
-                    "y": 0.25,
                     "c": "#777777"
                 },
                 "0,0",
