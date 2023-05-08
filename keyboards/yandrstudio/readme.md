@@ -138,7 +138,8 @@ A creative coder.
 | g80             | 0xAA96    | 0xAABF                   | Hotswap, RGB                     | &check;           |
 | lin70           | 0xAA96    | 0xAAB0                   | Hotswap, BLE                     | &check;           |
 | lui80           | 0xAA96    | 0xAAD0                   | Hotswap                          | &check;           |
-
+| dark75          | 0xAA96    | 0xAAD1                   | Hotswap                          | &check;           |
+| enter80         | 0xAA96    | 0xAAD2                   | Hotswap                          | &check;           |
 
 
 
