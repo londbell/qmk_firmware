@@ -2,8 +2,6 @@
     "name": "Enter80",
     "vendorId": "0xAA96",
     "productId": "0xAAD2",
-    "keycodes": ["qmk_lighting"],
-    "menus": ["qmk_rgblight"],
     "matrix": {
         "rows": 6,
         "cols": 17
