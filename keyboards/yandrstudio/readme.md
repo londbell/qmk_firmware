@@ -132,11 +132,11 @@ A creative coder.
 | sonic170        | 0xAA96    | 0xAAB9                   | Hotswap                          | &check;           |
 | retro70         | 0xAA96    | 0xAABA                   | Hotswap, Split KB                | &check;           |
 | ji98            | 0xAA96    | 0xAABB                   | Hotswap, BLE, TFT                | &check;           |
-| cray65          | 0xAA96    | 0xAABC                   | Hotswap, BLE, TFT                | &check;           |
+| magnum65        | 0xAA96    | 0xAABC                   | Hotswap, BLE                     | &check;           |
 | ckw75           | 0xAA96    | 0xAABD                   | Hotswap, BLE                     | &check;           |
 | dmk87           | 0xAA96    | 0xAABE                   | Hotswap, BLE, RGB(is)            | &check;           |
 | g80             | 0xAA96    | 0xAABF                   | Hotswap, RGB                     | &check;           |
-| ling70          | 0xAA96    | 0xAAB0                   | Hotswap, BLE                     | &check;           |
+| ling70ble       | 0xAA96    | 0xAAB0                   | Hotswap, BLE                     | &check;           |
 | lui80           | 0xAA96    | 0xAAD0                   | Hotswap                          | &check;           |
 | dark75          | 0xAA96    | 0xAAD1                   | Hotswap                          | &check;           |
 | enter80         | 0xAA96    | 0xAAD2                   | Hotswap                          | &check;           |
