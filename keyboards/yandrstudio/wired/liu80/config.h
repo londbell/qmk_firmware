@@ -8,7 +8,7 @@
 #define PRODUCT_ID      0xAAD0
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Y&R"
-#define PRODUCT         "Liu80"
+#define PRODUCT         "NAGARE 80"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -48,7 +48,7 @@
 #    define RGBLIGHT_LIMIT_VAL 200
 #    define RGBLIGHT_ANIMATIONS
 
-#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RAINBOW_SWIRL+5)
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RGB_TEST)
 #    define RGBLIGHT_DEFAULT_SPD 144
 #    define RGBLIGHT_DEFAULT_VAL 200
 

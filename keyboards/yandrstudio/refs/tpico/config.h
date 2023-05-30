@@ -1,4 +1,4 @@
-/* Copyright 2021 JasonRen(biu)
+/* Copyright 2023 JasonRen(biu)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 #define VENDOR_ID  0xAA96
 #define PRODUCT_ID 0xFFFF
 #define DEVICE_VER 0x0001
-#define MANUFACTURER    TEST_Y&R
-#define PRODUCT         tjoystick
+#define MANUFACTURER TEST_Y&R
+#define PRODUCT tjoystick
 
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
@@ -29,13 +29,8 @@
 // fix VIA RGB_light
 #define VIA_HAS_BROKEN_KEYCODES
 
-/* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
-
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
-
-// #define DEBUG_MATRIX_SCAN_RATE
 
 #define TAP_CODE_DELAY 15
 
@@ -49,18 +44,3 @@
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
-
-
-// Max 32
-#define JOYSTICK_BUTTON_COUNT 0
-// Max 6: X, Y, Z, Rx, Ry, Rz
-#define JOYSTICK_AXES_COUNT 3
-
-#define JOYSTICK_AXES_RESOLUTION 12
-
-#ifdef JOYSTICK_ENABLE
-    /* Joystick pins */
-#   define JOYSTICK_X_PIN A1
-#   define JOYSTICK_Y_PIN A2
-#   define JOYSTICK_Z_PIN A3
-#endif
