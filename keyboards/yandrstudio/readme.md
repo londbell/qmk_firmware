@@ -140,6 +140,7 @@ A creative coder.
 | liu80           | 0xAA96    | 0xAAD0                   | Hotswap                          | &check;           |
 | dark75          | 0xAA96    | 0xAAD1                   | Hotswap                          | &check;           |
 | enter80         | 0xAA96    | 0xAAD2                   | Hotswap                          | &check;           |
+| nova75          | 0xAA96    | 0xAAD3                   | Hotswap, BLE                     | &check;           |
 
 
 
