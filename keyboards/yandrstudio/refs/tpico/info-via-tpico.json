@@ -1,8 +1,9 @@
 {
     "name": "test_Y&R",
-    "vendorId": "0xFEED",
-    "productId": "0x6060",
-    "lighting": "none",
+    "vendorId": "0xAA96",
+    "productId": "0xFFFF",
+    "keycodes": ["qmk_lighting"],
+    "menus": ["qmk_rgblight"],
     "matrix": {
         "rows": 3,
         "cols": 3

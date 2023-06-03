@@ -152,6 +152,7 @@ A creative coder.
 | tjoystick | 0xAA96    | 0xFFFF     | STM32F103, Joystick           | &cross;           |
 | tlcd      | 0xAA96    | 0xFFFF     | STM32F401, LCD                | &cross;           |
 | tec       | 0xAA96    | 0xFFFF     | STM32F401, Electro Capacitive | &cross;           |
+| tpico     | 0xAA96    | 0xFFFF     | RP2040                        | &cross;           |
 
 ### Keyboard Tools Developed by Y&R Studio
 
