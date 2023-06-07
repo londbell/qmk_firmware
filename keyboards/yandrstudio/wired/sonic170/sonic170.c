@@ -22,11 +22,11 @@ void keyboard_post_init_kb(void) {
     rgblight_layers = my_rgb_layers;
 }
 
-void housekeeping_task_kb(void) {
-    if (rgblight_is_enabled() && !rgblight_get_layer_state(0)) {
-        rgblight_setrgb_at(0,0,0,2);
-    }
-}
+// void housekeeping_task_kb(void) {
+//     if (rgblight_is_enabled() && !rgblight_get_layer_state(0)) {
+//         rgblight_setrgb_at(0,0,0,2);
+//     }
+// }
 
 
 #   endif
