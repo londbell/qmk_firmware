@@ -51,16 +51,25 @@
 
 // #   define MASTER_RIGHT
 
-#   define USE_SERIAL
+#    define USE_SERIAL
 
-#   define SOFT_SERIAL_PIN A10
+#    define SPLIT_USB_TIMEOUT 500
 
-#   define SPLIT_TRANSPORT_MIRROR
+#    define SELECT_SOFT_SERIAL_SPEED 3
+#    define SERIAL_DELAY_BLIP_TIME 4
 
-#   define SPLIT_USB_DETECT
+#    define SOFT_SERIAL_PIN A10
 
-#   define SPLIT_MODS_ENABLE
-#   define SPLIT_LAYER_STATE_ENABLE
-#   define SPLIT_LED_STATE_ENABLE
+#    define SPLIT_TRANSPORT_MIRROR
+
+#    define SPLIT_USB_DETECT
+
+#    define SPLIT_WATCHDOG_ENABLE
+
+#    define SPLIT_WATCHDOG_TIMEOUT 2000
+
+#    define SPLIT_MODS_ENABLE
+#    define SPLIT_LAYER_STATE_ENABLE
+#    define SPLIT_LED_STATE_ENABLE
 
 #endif

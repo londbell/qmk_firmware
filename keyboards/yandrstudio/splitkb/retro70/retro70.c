@@ -14,3 +14,9 @@ bool is_keyboard_left(void) {
 }
 
 #endif
+void keyboard_post_init_kb(void) {
+#ifdef CONSOLE_ENABLE
+    debug_enable = true;
+    debug_matrix = true;
+#endif
+}
