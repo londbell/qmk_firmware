@@ -28,6 +28,7 @@ A creative coder.
 | yr80          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
 | ps64ble       | 0xAA96    | 0xAA0E     | BLE 5.0 Dual mode,RGB                 | &check;           |
 | sp65pm        | 0xAA96    | 0xAA0F     | 2.4G Single mode Split Keyboard       | &cross;           |
+| yr80pro       | 0xAA96    | 0xAA10     | 8k report rate                        | &check;           |
 
 
 
