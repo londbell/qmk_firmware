@@ -143,6 +143,7 @@ A creative coder.
 | enter80         | 0xAA96    | 0xAAD2                   | Hotswap                          | &check;           |
 | nova75          | 0xAA96    | 0xAAD3                   | Hotswap, BLE, RGB                | &check;           |
 | knight313       | 0xAA96    | 0xAAD4                   | Hotswap, BLE                     | &check;           |
+| lin60           | 0xAA96    | 0xAAD5                   | Solder                           | &check;           |
 
 
 
