@@ -144,6 +144,8 @@ A creative coder.
 | nova75          | 0xAA96    | 0xAAD3                   | Hotswap, BLE, RGB                | &check;           |
 | knight313       | 0xAA96    | 0xAAD4                   | Hotswap, BLE                     | &check;           |
 | lin60           | 0xAA96    | 0xAAD5                   | Solder                           | &check;           |
+| man40           | 0xAA96    | 0xAAD6                   | 40%, Hotswap                     | &check;           |
+
 
 
 
