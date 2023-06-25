@@ -9,10 +9,21 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "MU_Y&R"
 #ifdef I_AM_LEFT
-#define PRODUCT         "Mu80"
+#    define PRODUCT         "Mu80"
 #else
-#define PRODUCT         "MuPAD"
+#    define PRODUCT         "MuPAD"
 #endif
+
+#ifdef I_AM_LEFT
+#    define BOOTMAGIC_LITE_ROW 0
+#    define BOOTMAGIC_LITE_COLUMN 0
+#else
+#    define BOOTMAGIC_LITE_ROW 6
+#    define BOOTMAGIC_LITE_COLUMN 0
+#endif
+
+
+
 /* key matrix size */
 #define MATRIX_ROWS 6*2
 #define MATRIX_COLS 17
@@ -38,7 +49,6 @@
 /* RGN Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
-#    define RGB_MATRIX_SPLIT {114, 21}
 
 #ifdef I_AM_LEFT
 #    define RGB_DI_PIN B3
@@ -47,6 +57,7 @@
 #endif
 
 #    define RGB_MATRIX_LED_COUNT 160
+#    define RGB_MATRIX_SPLIT {123, 37}
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #    define RGBLIGHT_VAL_STEP 5
@@ -101,6 +112,52 @@
 #   define ENABLE_RGB_MATRIX_MULTISPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #   define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+
+#    define RGB_MATRIX_LAYERS
+#    define RGB_MATRIX_LAYER_BLINK
+#    define RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF
+#    define RGB_MATRIX_LAYERS_RETAIN_VAL
+#    define RGB_MATRIX_MAX_LAYERS 2
+
+#endif
+
+// #define FACTORY_TEST
+
+#ifdef RGBLIGHT_ENABLE
+
+#   ifdef I_AM_LEFT
+#       define RGB_DI_PIN B3
+#   else
+#        define RGB_DI_PIN A3
+#   endif
+
+#    define RGBLED_NUM 160
+#    define RGBLIGHT_SLEEP
+#    define RGBLIGHT_VAL_STEP 10
+
+#    ifdef FACTORY_TEST
+
+#    define RGBLIGHT_LIMIT_VAL 80
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RGB_TEST)
+#    define RGBLIGHT_EFFECT_RGB_TEST
+
+#    else
+
+#    define RGBLIGHT_LIMIT_VAL 200
+#    define RGBLIGHT_DEFAULT_MODE (RGBLIGHT_MODE_RAINBOW_SWIRL+5)
+#    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#    define RGBLIGHT_EFFECT_SNAKE
+#    define RGBLIGHT_EFFECT_KNIGHT
+#    define RGBLIGHT_EFFECT_CHRISTMAS
+#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#    define RGBLIGHT_EFFECT_RGB_TEST
+#    define RGBLIGHT_EFFECT_ALTERNATING
+#    define RGBLIGHT_EFFECT_TWINKLE
+
+#    endif
+
 #endif
 
 #ifdef WS2812_DRIVER_PWM

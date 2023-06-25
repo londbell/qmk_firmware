@@ -16,6 +16,11 @@ bool is_keyboard_left(void) {
 
 
 #ifdef RGB_MATRIX_ENABLE
+
+#include "rgb_matrix_layer.h"
+
+extern rgb_task_states rgb_task_state;
+
 led_config_t g_led_config = {
     {
         {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12,  13,  14,  15,  16},
@@ -25,12 +30,12 @@ led_config_t g_led_config = {
         {70,  71,  72,  73,  74,  75,  76,  77,  78,  79,  80,   NO_LED,  81,   NO_LED,   NO_LED,  82,   NO_LED},
         {92,  91,  90,  89,   NO_LED,   NO_LED,   NO_LED,   NO_LED,   NO_LED,   NO_LED,   NO_LED,  88,  87,  86,  85,  84,  83},
         /*right*/
-        {123,  124,  125,  126,               NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
-        {130,  129,  128,  127,               NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
-        {131,  132,  133,  134,             NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
-        {137,  136,  135,   NO_LED,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
-        {138,  139,  140,  141,           NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
-        {143,   NO_LED,  142,   NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
+        {123,  125,  127,  129,               NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        {133,  132,  131,  130,               NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        {134,  135,  136,  137,             NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        {140,  139,  138,   NO_LED,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        {141,  142,  143,  144,           NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        {146,   NO_LED,  145,   NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
     },
     {
         // LED Index to Physical Position
@@ -48,7 +53,7 @@ led_config_t g_led_config = {
         {224,0},{204,0},{183,0},{163,0},{143,0},{122,0},{102,0},{81,0},{61,0},{41,0},{20,0},{0,0},
         {0, 16}, {0, 32}, {0, 48},
         // right
-        {0,0},{75,0},{149,0},{224,0},
+        {0,0},{37,0},{75,0},{112,0},{149,0},{186,0},{224,0},
         {224,13},{149,13},{75,13},{0,13},
         {0,26},{75,26},{149,26},{224,26},
             {149,38},{75,38},{0,38},
@@ -56,7 +61,6 @@ led_config_t g_led_config = {
             {149,64},       {0,64},
         // right underglow
         {224,64}, {224,48},  {224,32}, {224,16}, {224,0},
-        {168, 0}, {112, 0},  {56, 0},
         {0, 0},   {0, 16},   {0, 32},  {0, 48},  {0, 64},
         {56, 64}, {112, 64}, {168, 64}
 
@@ -69,26 +73,56 @@ led_config_t g_led_config = {
       4,4,4,4,4, 4,4,4,4,4, // 2
       4,4,4,4,4, 4,4,4,4,4, // 3
       4,4,4,4,4, 4,4,4,4,4, // 4
-      4,6,6,6,6, 6,6,4,4,4, // 5
+      4,8,8,8,8, 8,8,4,4,4, // 5
       4,4,4,4,4, 4,4,4,4,4, // 6
       4,4,4,4,4, 4,4,4,4,4, // 7
       4,4,4,4,4, 4,4,4,4,4, // 8
       4,4,4,2,2, 2,2,2,2,2, // 9
       2,2,2,2,2, 2,2,2,2,2, // 10
       2,2,2,2,2, 2,2,2,2,2, // 11
-      2,2,2,4,4, 4,4,4,4,4, // 12
+      2,2,2,4,2, 4,2,4,2,4, // 12
       4,4,4,4,4, 4,4,4,4,4, // 13
-      4,4,4,4,2, 2,2,2,2,2, // 14
+      4,4,4,4,4, 4,4,2,2,2, // 14
       2,2,2,2,2, 2,2,2,2,2  // 15
     }
 };
 
+const rgb_matrix_adv_layer_segment_t PROGMEM my_capslock_layer[] = RGB_MATRIX_LAYER_SEGMENTS(
+    {69, 1, HSV_RED}
+);
+
+const rgb_matrix_adv_layer_segment_t PROGMEM my_numblock_layer[] = RGB_MATRIX_LAYER_SEGMENTS(
+    {133, 1, HSV_RED}
+);
+
+const rgb_matrix_adv_layer_segment_t* const PROGMEM my_rgb_matrix_layers[] = RGB_MATRIX_LAYERS_LIST(
+    my_capslock_layer,
+    my_numblock_layer
+);
+
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
+    rgb_matrix_adv_blink_layer_repeat_helper();
+    rgb_matrix_adv_set_layer_state(0, host_keyboard_led_state().caps_lock);
+    rgb_matrix_adv_set_layer_state(1, host_keyboard_led_state().num_lock);
+
+    // If not enabled, then nothing else will actually set the LEDs...
+    if (!rgb_matrix_is_enabled()) {
+        rgb_task_state = FLUSHING;
+    }
+    return true;
+}
+
+
 void keyboard_post_init_kb(void) {
     rgb_matrix_reload_from_eeprom();
+    rgb_matrix_layers = my_rgb_matrix_layers;
+
 }
 
 #endif
-
 
 
 void board_init(void) {
