@@ -31,6 +31,8 @@ RGB_MATRIX_DRIVER = WS2812
 # RGBLIGHT_DRIVER = WS2812
 WS2812_DRIVER = pwm
 
+CONSOLE_ENABLE = yes         # Console for debug
+
 SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = bitbang
 

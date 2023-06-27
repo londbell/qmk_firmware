@@ -119,7 +119,10 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
 void keyboard_post_init_kb(void) {
     rgb_matrix_reload_from_eeprom();
     rgb_matrix_layers = my_rgb_matrix_layers;
-
+#ifdef CONSOLE_ENABLE
+    debug_enable = true;
+    debug_matrix = true;
+#endif
 }
 
 #endif
