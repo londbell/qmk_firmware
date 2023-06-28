@@ -19,7 +19,7 @@
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA0C
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    "LKAILL_Y&R"
+#define MANUFACTURER    "Y&R"
 #define PRODUCT         "YR6095"
 
 /* key matrix size */
@@ -38,7 +38,7 @@
 #ifdef RGBLIGHT_ENABLE
 
 #    define RGB_DI_PIN B5
-#    define RGBLED_NUM 1
+#    define RGBLED_NUM 33
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_VAL_STEP 5
@@ -64,8 +64,10 @@
 
 #endif
 
-// #    ifdef VIA_ENABLE
-// #       define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 3
-// #       define DYNAMIC_KEYMAP_LAYER_COUNT 8
-// #       define FEE_PAGE_COUNT 4
-// #    endif
+#ifdef VIA_ENABLE
+#    define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 4
+#    define DYNAMIC_KEYMAP_LAYER_COUNT 10
+// Wear-leveling driver configuration
+#    define WEAR_LEVELING_LOGICAL_SIZE 2048
+#    define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
+#endif
