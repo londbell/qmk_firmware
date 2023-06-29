@@ -143,8 +143,14 @@ A creative coder.
 | enter80         | 0xAA96    | 0xAAD2                   | Hotswap                          | &check;           |
 | nova75          | 0xAA96    | 0xAAD3                   | Hotswap, BLE, RGB                | &check;           |
 | knight313       | 0xAA96    | 0xAAD4                   | Hotswap, BLE                     | &check;           |
-| lin60           | 0xAA96    | 0xAAD5                   | Solder                           | &check;           |
-| man40           | 0xAA96    | 0xAAD6                   | 40%, Hotswap                     | &check;           |
+| studiox         | 0xAA96    | 0xAAD5                   | Hotswap                          | &check;           |
+| tc80            | 0xAA96    | 0xAAD6                   | Hotswap                          | &check;           |
+| soda            | 0xAA96    | 0xAAD7                   | Hotswap                          | &check;           |
+| man40           | 0xAA96    | 0xAAD8                   | Hotswap                          | &check;           |
+| lin60           | 0xAA96    | 0xAAD9                   | Solder                           | &check;           |
+
+
+
 
 
 
