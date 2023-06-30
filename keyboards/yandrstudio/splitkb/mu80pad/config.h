@@ -177,9 +177,7 @@
 
 // #   define MASTER_RIGHT
 
-#    define USE_SERIAL
-
-#    define SPLIT_USB_TIMEOUT 500
+// #    define SPLIT_USB_TIMEOUT 500
 
 #    define SELECT_SOFT_SERIAL_SPEED 5
 #    define SERIAL_DELAY_BLIP_TIME 4
