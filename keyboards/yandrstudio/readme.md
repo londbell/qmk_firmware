@@ -147,7 +147,8 @@ A creative coder.
 | tc80            | 0xAA96    | 0xAAD6                   | Hotswap                          | &check;           |
 | soda            | 0xAA96    | 0xAAD7                   | Hotswap                          | &check;           |
 | man40           | 0xAA96    | 0xAAD8                   | Hotswap                          | &check;           |
-| lin60           | 0xAA96    | 0xAAD9                   | Solder                           | &check;           |
+| parity70        | 0xAA96    | 0xAAD9                   | Hotswap                          | &check;           |
+| lin60           | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
 
 
 
