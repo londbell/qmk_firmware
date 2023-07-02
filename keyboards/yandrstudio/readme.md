@@ -145,7 +145,7 @@ A creative coder.
 | knight313       | 0xAA96    | 0xAAD4                   | Hotswap, BLE                     | &check;           |
 | studiox         | 0xAA96    | 0xAAD5                   | Hotswap                          | &check;           |
 | tc80            | 0xAA96    | 0xAAD6                   | Hotswap                          | &check;           |
-| soda            | 0xAA96    | 0xAAD7                   | Hotswap                          | &check;           |
+| stella          | 0xAA96    | 0xAAD7                   | Hotswap                          | &check;           |
 | man40           | 0xAA96    | 0xAAD8                   | Hotswap                          | &check;           |
 | parity70        | 0xAA96    | 0xAAD9                   | Hotswap                          | &check;           |
 | lin60           | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
