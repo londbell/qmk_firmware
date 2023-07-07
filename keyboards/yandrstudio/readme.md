@@ -148,7 +148,7 @@ A creative coder.
 | stella          | 0xAA96    | 0xAAD7                   | Hotswap                          | &check;           |
 | man40           | 0xAA96    | 0xAAD8                   | Hotswap                          | &check;           |
 | parity70        | 0xAA96    | 0xAAD9                   | Hotswap                          | &check;           |
-| lin60           | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
+| fave60s         | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
 
 
 
