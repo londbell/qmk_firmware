@@ -152,11 +152,6 @@ A creative coder.
 | shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
 
 
-
-
-
-
-
 ### Obsolete or Test keyboard for reference design only
 
 | NAME      | VENDOR_ID | PRODUCT_ID | FEATURES                      | COMMERCIALIZATION |
