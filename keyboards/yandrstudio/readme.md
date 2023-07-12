@@ -149,7 +149,8 @@ A creative coder.
 | man40           | 0xAA96    | 0xAAD8                   | Hotswap                          | &check;           |
 | parity70        | 0xAA96    | 0xAAD9                   | Hotswap                          | &check;           |
 | lin60           | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
-| shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
+| shanhai70       | 0xAA96    | 0xAADB                   | Hotswap, BLE                     | &check;           |
+| N65BLE          | 0xAA96    | 0xAADC                   | Hotswap, BLE                     | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
