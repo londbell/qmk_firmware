@@ -4,11 +4,10 @@ MCU = STM32F103
 # Bootloader selection
 # BOOTLOADER = stm32duino
 
-MCU_LDSCRIPT = STM32F103xB_uf2
+MCU_LDSCRIPT = STM32F103xB_uf2boot
 BOARD = STM32_F103_STM32DUINO
-BOOTLOADER = tinyuf2
+BOOTLOADER = uf2boot
 FIRMWARE_FORMAT = uf2
-MCU_STARTUP ?= stm32f1xx
 
 # Wildcard to allow APM32 MCU
 DFU_SUFFIX_ARGS = -p FFFF -v FFFF
@@ -23,7 +22,7 @@ EXTRAKEY_ENABLE = yes       # Audio control and System control
 COMMAND_ENABLE = no         # Commands for debug and configuration
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 NKRO_ENABLE = yes           # USB Nkey Rollover
-CONSOLE_ENABLE = yes         # Console for debug
+# CONSOLE_ENABLE = yes         # Console for debug
 SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = bitbang
 

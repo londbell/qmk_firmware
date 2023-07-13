@@ -18,6 +18,13 @@
 #define MATRIX_COL_PINS_RIGHT { B14,    B15,    A8,     A9,     NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN }
 #define MATRIX_ROW_PINS_RIGHT { A7,     B1,     B0,     B2,     NO_PIN }
 
+#ifdef I_AM_LEFT
+#    define BOOTMAGIC_LITE_ROW 0
+#    define BOOTMAGIC_LITE_COLUMN 0
+#else
+#    define BOOTMAGIC_LITE_ROW 5
+#    define BOOTMAGIC_LITE_COLUMN 0
+#endif
 
 #define USE_BOTH_595_AND_GPIO
 #define NUM_OF_74HC595 2
