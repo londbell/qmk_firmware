@@ -152,7 +152,7 @@ A creative coder.
 | shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
 | N65BLE          | 0xAA96    | 0xAADC                   | Hotswap, BLE, RGB                | &check;           |
 | 65E             | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
-| t80 Lite        | 0xAA96    | 0xAADE                   | Hotswap                          | &check;           |
+| t80 lite        | 0xAA96    | 0xAADE                   | Hotswap                          | &check;           |
 | aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 
 
