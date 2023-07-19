@@ -150,16 +150,10 @@ A creative coder.
 | parity70        | 0xAA96    | 0xAAD9                   | Hotswap                          | &check;           |
 | fave60s         | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
 | shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
-| 65E             | 0xAA96    | 0xAADC                   | Hotswap                          | &check;           |
-| t80 Lite        | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
-| aqurius75       | 0xAA96    | 0xAADE                   | Hotswap, BLE, RGB                | &check;           |
-
-
-
-
-
-
-
+| N65BLE          | 0xAA96    | 0xAADC                   | Hotswap, BLE, RGB                | &check;           |
+| 65E             | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
+| t80 Lite        | 0xAA96    | 0xAADE                   | Hotswap                          | &check;           |
+| aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only

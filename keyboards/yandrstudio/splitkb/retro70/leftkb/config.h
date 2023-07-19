@@ -3,5 +3,4 @@
 
 #pragma once
 
-#define I_AM_LEFT
 #define PRODUCT         "Retro70"
