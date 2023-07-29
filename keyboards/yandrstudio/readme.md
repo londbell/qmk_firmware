@@ -155,7 +155,7 @@ A creative coder.
 | t80 lite        | 0xAA96    | 0xAADE                   | Hotswap, RGB                     | &check;           |
 | aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 | tong75          | 0xAA96    | 0xAAE0                   | Hotswap                          | &check;           |
-
+| gwydd65         | 0xAA96    | 0xAAE1                   | F103, Solder                     | &check;           |
 
 ### Obsolete or Test keyboard for reference design only
 

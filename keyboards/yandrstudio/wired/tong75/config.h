@@ -8,7 +8,7 @@
 #define PRODUCT_ID      0xAAE0
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    "Y&R"
-#define PRODUCT         "T75"
+#define PRODUCT         "leap"
 
 /* key matrix size */
 #define MATRIX_ROWS 6

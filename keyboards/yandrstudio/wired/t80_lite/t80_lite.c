@@ -14,3 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "t80_lite.h"
+
+#ifdef RGBLIGHT_ENABLE
+void keyboard_post_init_kb(void) {
+    rgblight_reload_from_eeprom();
+}
+#endif
