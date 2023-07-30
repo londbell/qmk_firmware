@@ -11,9 +11,9 @@
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
 
-//                         0   1   2    3   4   5   6   7   8   9   10   11   12   13   14
-#define MATRIX_COL_PINS {  B8, B9, C13, A0, A3, A4, A5, A6, A7, B0, B12, B13, B14, B15, A8 }
-#define MATRIX_ROW_PINS {  B3, B5, B6,  B7, A15 }
+//                        0   1   2    3    4   5   6   7   8   9   10   11   12   13  14
+#define MATRIX_COL_PINS { B5, B6, B7,  B0,  A7, A6, A5, A4, A3, B3, A15, B1,  B2, B10, B11 }
+#define MATRIX_ROW_PINS { A10, A0, A1, B12, A2 }
 
 #ifdef RGBLIGHT_ENABLE
 
