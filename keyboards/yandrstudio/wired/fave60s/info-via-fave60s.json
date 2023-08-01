@@ -6,6 +6,8 @@
     "rows": 5,
     "cols": 14
   },
+  "menus": ["qmk_backlight" ],
+  "keycodes": ["qmk_lighting"],
   "layouts": {
     "presets": {
       "default": [
