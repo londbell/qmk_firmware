@@ -156,7 +156,7 @@ A creative coder.
 | aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 | tong75          | 0xAA96    | 0xAAE0                   | Hotswap                          | &check;           |
 | gwydd65         | 0xAA96    | 0xAAE1                   | F103, Solder                     | &check;           |
-| y80             | 0xAA96    | 0xAAE2                   | Hotswap, RGB                     | &check;           |
+| y80rgb          | 0xAA96    | 0xAAE2                   | Hotswap, RGB                     | &check;           |
 | tn75pro         | 0xAA96    | 0xAAE3                   | Hotswap, BLE, RGB                | &check;           |
 
 
