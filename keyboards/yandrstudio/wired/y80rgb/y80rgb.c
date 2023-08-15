@@ -76,6 +76,22 @@ void keyboard_post_init_kb(void) {
 #endif
 }
 
+static bool force_power_down_rgb = false;
+#include "usb_main.h"
+void housekeeping_task_kb(void) {
+    if (USB_DRIVER.state != USB_ACTIVE) {
+        if (rgb_matrix_is_enabled()) {
+            force_power_down_rgb = true;
+            rgb_matrix_disable_noeeprom();
+        }
+    } else {
+        if (force_power_down_rgb) {
+            force_power_down_rgb = false;
+            rgb_matrix_enable_noeeprom();
+        }
+    }
+}
+
 #endif
 
 

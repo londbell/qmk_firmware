@@ -69,6 +69,38 @@ void keyboard_post_init_kb(void) {
 
 #endif
 
+// void suspend_power_down_kb(void) {
+//     rgb_matrix_set_suspend_state(true);
+//     if (rgb_matrix_is_enabled()) {
+//         force_power_down_rgb = true;
+//         rgb_matrix_disable_noeeprom();
+//     }
+//     suspend_power_down_user();
+// }
+
+// void suspend_wakeup_init_kb(void) {
+//     rgb_matrix_set_suspend_state(false);
+//     if (force_power_down_rgb) {
+//         force_power_down_rgb = false;
+//         rgb_matrix_enable_noeeprom();
+//     }
+//     suspend_wakeup_init_user();
+// }
+static bool force_power_down_rgb = false;
+#include "usb_main.h"
+void housekeeping_task_kb(void) {
+    if (USB_DRIVER.state != USB_ACTIVE) {
+        if (rgb_matrix_is_enabled()) {
+            force_power_down_rgb = true;
+            rgb_matrix_disable_noeeprom();
+        }
+    } else {
+        if (force_power_down_rgb) {
+            force_power_down_rgb = false;
+            rgb_matrix_enable_noeeprom();
+        }
+    }
+}
 
 
 #ifdef RGBLIGHT_ENABLE
