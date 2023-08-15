@@ -158,6 +158,9 @@ A creative coder.
 | gwydd65         | 0xAA96    | 0xAAE1                   | F103, Solder                     | &check;           |
 | y80rgb          | 0xAA96    | 0xAAE2                   | Hotswap, RGB                     | &check;           |
 | tn75pro         | 0xAA96    | 0xAAE3                   | Hotswap, BLE, RGB                | &check;           |
+| ns80            | 0xAA96    | 0xAAE4                   | Hotswap, BLE, RGB                | &check;           |
+| tp1             | 0xAA96    | 0xAAE5                   | Hotswap, RGB, Audio, Hit         | &check;           |
+| xj65            | 0xAA96    | 0xAAE6                   | Hotswap, RGB, TFT                | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
