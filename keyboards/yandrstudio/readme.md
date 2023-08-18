@@ -151,7 +151,7 @@ A creative coder.
 | fave60s         | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
 | shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
 | N65BLE          | 0xAA96    | 0xAADC                   | Hotswap, BLE, RGB                | &check;           |
-| 65E             | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
+| T65E            | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
 | t80 lite        | 0xAA96    | 0xAADE                   | Hotswap, RGB                     | &check;           |
 | aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 | tong75          | 0xAA96    | 0xAAE0                   | Hotswap                          | &check;           |
