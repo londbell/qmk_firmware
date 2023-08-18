@@ -161,6 +161,7 @@ A creative coder.
 | ns80            | 0xAA96    | 0xAAE4                   | Hotswap, BLE, RGB                | &check;           |
 | tp1             | 0xAA96    | 0xAAE5                   | Hotswap, RGB, Audio, Hit         | &check;           |
 | xj65            | 0xAA96    | 0xAAE6                   | Hotswap, RGB, TFT                | &check;           |
+| l68             | 0xAA96    | 0xAAE7                   | Hotswap, RGB                     | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
