@@ -1,4 +1,4 @@
-/* Copyright 2020 QMK
+/* Copyright 2022 JasonRen(biu)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,9 +14,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #pragma once
-#include_next <halconf.h>
 
-#undef HAL_USE_PWM
-#define HAL_USE_PWM    TRUE
+#include_next <mcuconf.h>
+
+#undef STM32_PWM_USE_TIM2
+#define STM32_PWM_USE_TIM2 TRUE
+
+#undef STM32_PLLXTPRE
+#define STM32_PLLXTPRE STM32_PLLXTPRE_DIV2

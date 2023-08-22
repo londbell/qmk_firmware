@@ -1,4 +1,4 @@
-/* Copyright 2020 QMK
+/* Copyright 2022 JasonRen(biu)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,10 +13,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-
 #pragma once
-#include_next <halconf.h>
 
-#undef HAL_USE_PWM
-#define HAL_USE_PWM    TRUE
+#include_next "board.h"
+
+#undef STM32_HSECLK
+#define STM32_HSECLK 16000000
+
+#define BOARD_YANDR_BIU_F103

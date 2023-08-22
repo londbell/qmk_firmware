@@ -17,9 +17,9 @@
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 17
 
-/* key matrix pins              0   1   2   3   4   5   6   7    8    9    10   11  12  13   14  15  16 */
-#define MATRIX_ROW_PINS       { B5, B6, B7, A1, A2, B9 }
-#define MATRIX_COL_PINS       { A3, B1, B0, A7, A6, A5, A4, B12, B13, B14, B15, A8, A9, A10, A15, B3, B4 }
+/* key matrix pins              0    1   2   3    4    5    6    7   8   9   10  11  12  13   14  15  16 */
+#define MATRIX_ROW_PINS       { B9,  B8, B7, B11, A4,  A3 }
+#define MATRIX_COL_PINS       { A15, A9, A8, B15, B14, B13, B12, A5, A6, A7, B0, B1, B2, B10, B4, B5, B6 }
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -33,7 +33,7 @@
 /* RGN Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
-#    define RGB_DI_PIN B8
+#    define RGB_DI_PIN B3
 
 #    define RGB_MATRIX_LED_COUNT 94
 
@@ -101,9 +101,9 @@
 
 #ifdef WS2812_DRIVER_PWM
 
-#    define WS2812_PWM_DRIVER PWMD4  // default: PWMD2
-#    define WS2812_PWM_CHANNEL 3  // default: 2
-#    define WS2812_DMA_STREAM STM32_DMA1_STREAM7  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#    define WS2812_DMA_CHANNEL 7  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
+#    define WS2812_PWM_CHANNEL 2  // default: 2
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_CHANNEL 2  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 
 #endif
