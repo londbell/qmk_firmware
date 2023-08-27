@@ -173,6 +173,7 @@ A creative coder.
 | tlcd      | 0xAA96    | 0xFFFF     | STM32F401, LCD                | &cross;           |
 | tec       | 0xAA96    | 0xFFFF     | STM32F401, Electro Capacitive | &cross;           |
 | tpico     | 0xAA96    | 0xFFFF     | RP2040                        | &cross;           |
+| tmagnetic | 0xAA96    | 0xFFFF     | magnetic                      | &cross;           |
 
 ### Keyboard Tools Developed by Y&R Studio
 

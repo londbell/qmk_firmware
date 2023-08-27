@@ -1,4 +1,4 @@
-/* Copyright 2023 Cipulot
+/* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,23 +14,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 #pragma once
+#include_next <halconf.h>
 
-#include <stdint.h>
-#include <stdbool.h>
+#undef  SERIAL_USB_BUFFERS_SIZE
+#define SERIAL_USB_BUFFERS_SIZE 256
 
-#include "matrix.h"
+#undef  SERIAL_BUFFERS_SIZE
+#define SERIAL_BUFFERS_SIZE     128
 
-typedef struct {
-    uint16_t ecsm_actuation_threshold; // threshold for key release
-    uint16_t ecsm_release_threshold;   // threshold for key press
-} ecsm_config_t;
+#undef  SPI_USE_WAIT
+#define SPI_USE_WAIT TRUE
 
-ecsm_config_t ecsm_config;
+#undef HAL_USE_ADC
+#define HAL_USE_ADC    TRUE
 
-int      ecsm_init(ecsm_config_t const* const ecsm_config);
-int      ecsm_update(ecsm_config_t const* const ecsm_config);
-bool     ecsm_matrix_scan(matrix_row_t current_matrix[]);
-uint16_t ecsm_readkey_raw(uint8_t channel, uint8_t row, uint8_t col);
-bool     ecsm_update_key(matrix_row_t* current_row, uint8_t row, uint8_t col, uint16_t sw_value);
-void     ecsm_print_matrix(void);
+#undef  SPI_SELECT_MODE
+#define SPI_SELECT_MODE SPI_SELECT_MODE_PAD
+

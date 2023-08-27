@@ -1,4 +1,4 @@
-/* Copyright 2022 JasonRen(biu)
+/* Copyright 2023 Cipulot
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,36 +14,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-#include "ec_switch.h"
+#include "ec_switch_matrix.h"
 #include "matrix.h"
-#include "debug.h"
 
-#ifndef LOW_THRESHOLD
-#    define LOW_THRESHOLD 200
-#endif
-
-#ifndef HIGH_THRESHOLD
-#    define HIGH_THRESHOLD 300
-#endif
+/* matrix state(1:on, 0:off) */
+extern matrix_row_t raw_matrix[MATRIX_ROWS]; // raw values
+extern matrix_row_t matrix[MATRIX_ROWS];     // debounced values
 
 void matrix_init_custom(void) {
-    ecsm_config_t ecsm_config = {.low_threshold = LOW_THRESHOLD, .high_threshold = HIGH_THRESHOLD};
+    // Default values, overwritten by VIA if enabled later
+    ecsm_config.ecsm_actuation_threshold = DEFAULT_ACTUATION_LEVEL;
+    ecsm_config.ecsm_release_threshold   = DEFAULT_RELEASE_LEVEL;
 
-    ecs_init(&ecsm_config);
+    ecsm_init(&ecsm_config);
 }
 
 bool matrix_scan_custom(matrix_row_t current_matrix[]) {
-    bool updated = ecs_matrix_scan(current_matrix);
+    bool updated = ecsm_matrix_scan(current_matrix);
 
-    static int print_dely_cnt = 0;
-    if (print_dely_cnt++ == 300) {
-        print_dely_cnt = 0;
-        ecs_print_matrix();
-        print("\n");
+// RAW matrix values on console
+#ifdef CONSOLE_ENABLE
+    static int cnt = 0;
+    if (cnt++ == 350) {
+        cnt = 0;
+        ecsm_print_matrix();
     }
-
+#endif
     return updated;
 }
-
-

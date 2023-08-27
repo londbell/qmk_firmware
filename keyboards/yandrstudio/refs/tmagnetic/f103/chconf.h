@@ -1,4 +1,4 @@
-/* Copyright 2023 Cipulot
+/* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,21 +16,23 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <stdbool.h>
+#define CH_CFG_ST_FREQUENCY 10000
 
-#include "matrix.h"
+#define CH_CFG_ST_TIMEDELTA 0
 
-typedef struct {
-    uint16_t ecsm_actuation_threshold; // threshold for key release
-    uint16_t ecsm_release_threshold;   // threshold for key press
-} ecsm_config_t;
+#define CH_CFG_USE_CONDVARS_TIMEOUT FALSE
 
-ecsm_config_t ecsm_config;
+#define CH_CFG_FACTORY_OBJECTS_REGISTRY TRUE
 
-int      ecsm_init(ecsm_config_t const* const ecsm_config);
-int      ecsm_update(ecsm_config_t const* const ecsm_config);
-bool     ecsm_matrix_scan(matrix_row_t current_matrix[]);
-uint16_t ecsm_readkey_raw(uint8_t channel, uint8_t row, uint8_t col);
-bool     ecsm_update_key(matrix_row_t* current_row, uint8_t row, uint8_t col, uint16_t sw_value);
-void     ecsm_print_matrix(void);
+#define CH_CFG_FACTORY_GENERIC_BUFFERS TRUE
+
+#define CH_CFG_FACTORY_SEMAPHORES TRUE
+
+#define CH_CFG_FACTORY_MAILBOXES TRUE
+
+#define CH_CFG_FACTORY_OBJ_FIFOS TRUE
+
+#define CH_CFG_FACTORY_PIPES TRUE
+
+#include_next <chconf.h>
+
