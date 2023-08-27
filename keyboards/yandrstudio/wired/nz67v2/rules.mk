@@ -17,5 +17,5 @@ RGB_MATRIX_DRIVER = WS2812
 
 ENCODER_ENABLE = yes
 
-CUSTOM_MATRIX = lite    # for using the A9 pin as matrix io
-QUANTUM_SRC += matrix.c
+# CUSTOM_MATRIX = lite    # for using the A9 pin as matrix io
+# QUANTUM_SRC += matrix.c

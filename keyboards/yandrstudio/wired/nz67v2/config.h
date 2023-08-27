@@ -15,14 +15,12 @@
  */
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
 #define PRODUCT_ID      0xAA83
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Y&R
-#define PRODUCT         nz67v2
+#define MANUFACTURER    "Y&R"
+#define PRODUCT         "nz67v2"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -61,7 +59,7 @@
 
 #    define RGB_DI_PIN B5
 #    define RGBLED_NUM 86
-#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #    define RGBLIGHT_VAL_STEP 5
