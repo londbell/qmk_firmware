@@ -23,12 +23,6 @@
 #define MANUFACTURER    "TEST_Y&R"
 #define PRODUCT         "tmagnetic"
 
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-/* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
-
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
@@ -40,11 +34,25 @@
 #define MATRIX_ROWS 3
 #define MATRIX_COLS 3
 
-//                        0    1    2
-#define MATRIX_COL_PINS { B2,  A8,  A9 }
-#define MATRIX_ROW_PINS { B1,  A11, A10}
-
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
 #define MATRIX_ADC_PIN B0
+
+#define NUM_OF_MUX   1
+#define MUX_ADD_PIN1 A7
+#define MUX_ADD_PIN2 A6
+#define MUX_ADD_PIN3 A5
+#define MUX_EN_PINS  {B2}
+#define MUX_OUT_PIN2MCU {B0}
+
+#define PINS_NUM 1
+#define PINS_MAP {B1}
+
+//                       {muxId, muxAim, io_pin}
+#define MATRIX_OF_4051 { {{0,0,0},{0,2,0},{0,1,0}},\
+                         {{0,3,0},{0,4,0},{0,6,0}},\
+                         {{0,5,0},{0,7,0},{0xff,0,0}}\
+                        }
+
+#define ADC_SAMPLE_TIMES 3
