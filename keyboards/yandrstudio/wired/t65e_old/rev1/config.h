@@ -4,7 +4,7 @@
 #pragma once
 
 /* USB Device descriptor parameter */
-#define DEVICE_VER      0x0002
+#define DEVICE_VER      0x0001
 
 /* key matrix size */
 #define MATRIX_ROWS 5

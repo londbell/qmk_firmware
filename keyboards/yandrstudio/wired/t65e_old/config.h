@@ -16,6 +16,3 @@
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
-
-#define LED_CAPS_LOCK_PIN B1
-#define LED_PIN_ON_STATE  1
