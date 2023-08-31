@@ -162,7 +162,7 @@ A creative coder.
 | tp1             | 0xAA96    | 0xAAE5                   | Hotswap, RGB, Audio, Hit         | &check;           |
 | xj65            | 0xAA96    | 0xAAE6                   | Hotswap, RGB, TFT                | &check;           |
 | l68             | 0xAA96    | 0xAAE7                   | Hotswap, RGB                     | &check;           |
-| rose65v2        | 0xAA96    | 0xAAE8                   | Hotswap, RGB                     | &check;           |
+| rose65v2        | 0xAA96    | 0xAAE8(shadow of 0xAA88) | Hotswap, RGB                     | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
