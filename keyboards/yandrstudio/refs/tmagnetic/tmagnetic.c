@@ -17,21 +17,6 @@
 
 #include "analog.h"
 
-bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    switch(keycode) {
-        case KC_Q:
-            if (record->event.pressed) {
-                dprintf("X read value:%d \n", analogReadPin(JOYSTICK_X_PIN));
-                dprintf("Y read value:%d \n", analogReadPin(JOYSTICK_Y_PIN));
-            }
-            return false;
-        default:
-            return true;
-    }
-    return true;
-}
-
-
 void keyboard_post_init_kb(void) {
     debug_enable=true;
     // debug_matrix=true;

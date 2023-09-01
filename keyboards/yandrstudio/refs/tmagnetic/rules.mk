@@ -11,5 +11,7 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = yes           # USB Nkey Rollover
 
 CUSTOM_MATRIX = lite
-SRC += matrix_tm.c
+SRC += matrix_tm_base.c
 QUANTUM_LIB_SRC += analog.c
+
+ALLOW_WARNINGS = yes

@@ -132,7 +132,6 @@ static void init_pins(void) {
 }
 
 static void debug_for_adc(uint32_t adc) {
-
 }
 
 
