@@ -136,7 +136,11 @@ static uint32_t adc_debug_timer = 0;
 static void debug_for_adc(uint8_t current_row, uint8_t current_col, uint32_t adc) {
     uint32_t timer_now = timer_read32();
     if (TIMER_DIFF_32(timer_now, adc_debug_timer) >= 500) {
-        dprintf("R: %d, C: %d, ADC:%ld, TH:%ld\n", current_row, current_col, adc, adc_vals_th[current_row][current_col]);
+        dprintf("==========MATRIX ADC VAL=============\n");
+        dprintf("R0: %4ld %4ld %4ld\n", adc_vals_last[0][0], adc_vals_last[0][1], adc_vals_last[0][2]);
+        dprintf("R1: %4ld %4ld %4ld\n", adc_vals_last[1][0], adc_vals_last[1][1], adc_vals_last[1][2]);
+        dprintf("R2: %4ld %4ld %4ld\n", adc_vals_last[2][0], adc_vals_last[2][1], adc_vals_last[2][2]);
+        // dprintf("R: %d, C: %d, ADC:%ld, TH:%ld\n", current_row, current_col, adc, adc_vals_th[current_row][current_col]);
         adc_debug_timer = timer_now;
     }
 }
