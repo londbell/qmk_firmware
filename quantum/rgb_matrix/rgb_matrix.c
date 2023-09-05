@@ -434,6 +434,7 @@ void rgb_matrix_task(void) {
             rgb_task_render(effect);
 #if !defined(RGB_MATRIX_LAYERS_OVERRIDE_RGB_OFF)
             if (effect) {
+#endif
                 // Only run the basic indicators in the last render iteration (default there are 5 iterations)
                 if (rgb_effect_params.iter == RGB_MATRIX_LED_PROCESS_MAX_ITERATIONS) {
                     rgb_matrix_indicators();

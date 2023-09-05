@@ -40,7 +40,7 @@
 
 #ifdef RGBLIGHT_ENABLE
 
-#    define RGB_DI_PIN A10
+#    define WS2812_DI_PIN A10
 #    define RGBLED_NUM 34
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_SLEEP

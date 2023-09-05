@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "tg67_test_rgbml.h"
+#include "process_magic.h"
 
 #ifdef RGB_MATRIX_ENABLE
 

@@ -9,7 +9,7 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = yes           # USB Nkey Rollover
 
 RGBLIGHT_ENABLE = yes
-RGBLIGHT_DRIVER = WS2812
+RGBLIGHT_DRIVER = ws2812
 
 CUSTOM_MATRIX = lite
 QUANTUM_SRC += matrix.c

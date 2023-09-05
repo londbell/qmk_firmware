@@ -4,6 +4,8 @@
 #include "rgb_matrix_layer.h"
 #include "rgb_matrix.h"
 #include "color.h"
+#include "progmem.h"
+#include "sync_timer.h"
 #include <stdlib.h>
 
 rgb_matrix_adv_layers_mask_t                 rgb_matrix_adv_enabled_layer_mask = 0;

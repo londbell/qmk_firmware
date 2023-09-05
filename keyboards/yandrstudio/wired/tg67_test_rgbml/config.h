@@ -24,7 +24,7 @@
 /* RGB Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
-#    define RGB_DI_PIN A7
+#    define WS2812_DI_PIN A7
 #    define RGB_MATRIX_LED_COUNT 69
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 250
