@@ -5,3 +5,5 @@ BOOTLOADER = stm32-dfu
 RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 # WS2812_DRIVER = pwm         # WS2812 RGB Driver
 WS2812_DRIVER = bitbang
+EEPROM_DRIVER = wear_leveling
+WEAR_LEVELING_DRIVER = embedded_flash
