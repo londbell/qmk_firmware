@@ -5,8 +5,8 @@
 
 
 //                        0     1     2
-#define MATRIX_COL_PINS { B0, B1, B2 }
-#define MATRIX_ROW_PINS { B3, B4, B10}
+#define MATRIX_COL_PINS { B2, B0, B1 }
+#define MATRIX_ROW_PINS { B10, B3, B4}
 
 #ifdef RGBLIGHT_ENABLE
 

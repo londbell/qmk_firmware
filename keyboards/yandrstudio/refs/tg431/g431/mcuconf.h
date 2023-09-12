@@ -27,7 +27,7 @@
 #undef STM32_PLLN_VALUE
 #undef STM32_PLLQ_VALUE
 #undef STM32_PLLR_VALUE
-
+#undef STM32_FLASH_SECTORS_PER_BANK
 
 #define STM32_HSE_ENABLED                   TRUE
 #define STM32_PLLSRC                        STM32_PLLSRC_HSE
@@ -35,3 +35,19 @@
 #define STM32_PLLN_VALUE                    85
 #define STM32_PLLQ_VALUE                    2
 #define STM32_PLLR_VALUE                    2
+#define STM32_FLASH_SECTORS_PER_BANK        32 //  dual bank organization: 2*32*2k
+
+// for avoid compiling error of STM32_FLASH_NUMBER_OF_BANKS
+#define FLASH_OPTR_DBANK_Pos              (22U)
+#define FLASH_OPTR_DBANK_Msk              (0x1UL << FLASH_OPTR_DBANK_Pos)      /*!< 0x00400000 */
+#define FLASH_OPTR_DBANK                  FLASH_OPTR_DBANK_Msk
+
+// setup dual bank for g431
+
+#define FLASH_CR_MER2_Pos                 (15U)
+#define FLASH_CR_MER2_Msk                 (0x1UL << FLASH_CR_MER2_Pos)         /*!< 0x00008000 */
+#define FLASH_CR_MER2                     FLASH_CR_MER2_Msk
+
+#define FLASH_CR_MER2_Pos                 (15U)
+#define FLASH_CR_MER2_Msk                 (0x1UL << FLASH_CR_MER2_Pos)         /*!< 0x00008000 */
+#define FLASH_CR_MER2                     FLASH_CR_MER2_Msk
