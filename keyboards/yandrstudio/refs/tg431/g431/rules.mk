@@ -13,3 +13,4 @@ WEAR_LEVELING_DRIVER = embedded_flash
 # lib/chibios/os/hal/ports/STM32/STM32G4xx/stm32_registry.h->Line:608
 # undef STM32_FLASH_NUMBER_OF_BANKS
 # define STM32_FLASH_NUMBER_OF_BANKS 1
+
