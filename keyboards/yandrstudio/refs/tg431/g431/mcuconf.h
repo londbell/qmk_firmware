@@ -20,3 +20,18 @@
 
 #undef STM32_PWM_USE_TIM4
 #define STM32_PWM_USE_TIM4 TRUE
+
+#undef STM32_HSE_ENABLED
+#undef STM32_PLLSRC
+#undef STM32_PLLM_VALUE
+#undef STM32_PLLN_VALUE
+#undef STM32_PLLQ_VALUE
+#undef STM32_PLLR_VALUE
+
+
+#define STM32_HSE_ENABLED                   TRUE
+#define STM32_PLLSRC                        STM32_PLLSRC_HSE
+#define STM32_PLLM_VALUE                    6
+#define STM32_PLLN_VALUE                    85
+#define STM32_PLLQ_VALUE                    2
+#define STM32_PLLR_VALUE                    2
