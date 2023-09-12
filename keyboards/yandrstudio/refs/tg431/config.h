@@ -8,7 +8,7 @@
 #define PRODUCT_ID 0xFFFF
 #define DEVICE_VER 0x0001
 #define MANUFACTURER "TEST_Y&R"
-#define PRODUCT "tpico"
+#define PRODUCT "tg431"
 
 // enable the nkro when using the VIA.
 #define FORCE_NKRO

@@ -6,7 +6,7 @@
 
 //                        0     1     2
 #define MATRIX_COL_PINS { B0, B1, B2 }
-#define MATRIX_ROW_PINS { B3, B4, B5}
+#define MATRIX_ROW_PINS { B3, B4, B10}
 
 #ifdef RGBLIGHT_ENABLE
 
@@ -29,12 +29,22 @@
 #    define RGBLIGHT_EFFECT_TWINKLE
 #    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
 
-// #    define WS2812_PWM_DRIVER PWMD3
-// #    define WS2812_PWM_CHANNEL 2
-// #    define WS2812_DMA_STREAM STM32_DMA1_STREAM3
-// #    define WS2812_DMA_CHANNEL 3
+#    define WS2812_PWM_DRIVER PWMD4
+#    define WS2812_PWM_CHANNEL 1
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM3
+// #    define WS2812_DMA_CHANNEL 4 // 对G4系列没有意义
+#    define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM4_UP  // DMAMUX configuration for TIMx_UP -- only required if your MCU has a DMAMUX peripheral, see the respective reference manual for the appropriate values for your MCU.
+
 
 #endif
 
 // Bitbang WS2812
 #define NOP_FUDGE 0.4
+
+#ifdef EEPROM_TRANSIENT
+#   define TRANSIENT_EEPROM_SIZE (64+2048)
+#endif
+
+// lib/chibios/os/hal/ports/STM32/STM32G4xx/stm32_registry.h->Line:608
+// #undef STM32_FLASH_NUMBER_OF_BANKS
+// #define STM32_FLASH_NUMBER_OF_BANKS 1
