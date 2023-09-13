@@ -17,7 +17,11 @@
 
 #define ADC_BUFFER_DEPTH 1
 #define ADC_NUM_CHANNELS 1
-#define ADC_SAMPLING_RATE ADC_SMPR_SMP_2P5
+// 采样时间+ 12.5个周期
+// SYS: 170MHZ, ADC: SYS/4 = 42.5MHZ
+// ADC: = 15*1/42.5 =352ns
+// #define ADC_SAMPLING_RATE ADC_SMPR_SMP_2P5
+#define ADC_SAMPLING_RATE ADC_SMPR_SMP_12P5
 #define ADC_RESOLUTION ADC_CFGR_RES_12BITS
 
 static int16_t analogReadPin_my(pin_t pin) {
@@ -35,6 +39,8 @@ static int16_t analogReadPin_my(pin_t pin) {
     adcConversionGroup.smpr[1] = ADC_SMPR2_SMP_AN10(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN11(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN12(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN13(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN14(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN15(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN16(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN17(ADC_SAMPLING_RATE) | ADC_SMPR2_SMP_AN18(ADC_SAMPLING_RATE);
     switch (pin) {
         case A1:
+            // 设置规则通道组寄存器
+            // 不设置注入通道
             adcConversionGroup.sqr[0]  = ADC_SQR1_SQ1_N(ADC_CHANNEL_IN2);
             sampleBuffer[0]            = 0;
             break;
@@ -57,9 +63,13 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_user(keycode, record)) { return false; }
 
     switch(keycode) {
-        case KC_A:
+        case KC_Q:
             if (record->event.pressed) {
-                dprintf("ADC: val %d", analogReadPin_my(A2));
+                // 12bit
+                // out V:val/4096.0*3.3
+                // 可以开启FPU加速浮点运算, G4默认开启
+                uint32_t adc_val = analogReadPin_my(A2);
+                dprintf("ADC: val %lu, Voltage: %lumv\n", adc_val, adc_val*3300>>12);
             }
             return true;
         default:

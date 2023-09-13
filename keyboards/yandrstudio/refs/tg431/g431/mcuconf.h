@@ -30,7 +30,12 @@
 #undef STM32_PLLN_VALUE
 #undef STM32_PLLQ_VALUE
 #undef STM32_PLLR_VALUE
+#undef STM32_ADC12SEL
+#undef STM32_ADC_ADC12_CLOCK_MODE
+#undef STM32_ADC_ADC12_PRESC
+
 #undef STM32_FLASH_SECTORS_PER_BANK
+
 
 #define STM32_HSE_ENABLED                   TRUE
 #define STM32_PLLSRC                        STM32_PLLSRC_HSE
@@ -38,7 +43,13 @@
 #define STM32_PLLN_VALUE                    85
 #define STM32_PLLQ_VALUE                    2
 #define STM32_PLLR_VALUE                    2
-#define STM32_FLASH_SECTORS_PER_BANK        32 //  dual bank organization: 2*32*2k
+
+#define STM32_ADC12SEL                      STM32_ADC12SEL_SYSCLK
+#define STM32_ADC_ADC12_CLOCK_MODE          ADC_CCR_CKMODE_ADCCK
+#define STM32_ADC_ADC12_PRESC               ADC_CCR_PRESC_DIV4
+
+//  dual bank organization: 2*32*2k
+#define STM32_FLASH_SECTORS_PER_BANK        32
 
 // for avoid compiling error of STM32_FLASH_NUMBER_OF_BANKS
 #define FLASH_OPTR_DBANK_Pos              (22U)
