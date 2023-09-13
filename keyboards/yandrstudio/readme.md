@@ -151,18 +151,21 @@ A creative coder.
 | fave60s         | 0xAA96    | 0xAADA                   | Solder                           | &check;           |
 | shanhai70       | 0xAA96    | 0xAADB                   | Hotswap                          | &check;           |
 | N65BLE          | 0xAA96    | 0xAADC                   | Hotswap, BLE, RGB                | &check;           |
-| T65E            | 0xAA96    | 0xAADD                   | Hotswap                          | &check;           |
+| 65E             | 0xAA96    | 0xAADD                   | Hotswap, Solder                  | &check;           |
 | t80 lite        | 0xAA96    | 0xAADE                   | Hotswap, RGB                     | &check;           |
 | aqurius75       | 0xAA96    | 0xAADF                   | Hotswap, BLE, RGB                | &check;           |
 | tong75          | 0xAA96    | 0xAAE0                   | Hotswap                          | &check;           |
 | gwydd65         | 0xAA96    | 0xAAE1                   | F103, Solder                     | &check;           |
 | y80rgb          | 0xAA96    | 0xAAE2                   | Hotswap, RGB                     | &check;           |
-| tn75pro         | 0xAA96    | 0xAAE3                   | Hotswap, BLE, RGB                | &check;           |
+| DP75BLE         | 0xAA96    | 0xAAE3                   | Hotswap, BLE, RGB                | &check;           |
 | ns80            | 0xAA96    | 0xAAE4                   | Hotswap, BLE, RGB                | &check;           |
-| tp1             | 0xAA96    | 0xAAE5                   | Hotswap, RGB, Audio, Hit         | &check;           |
+| tp2             | 0xAA96    | 0xAAE5                   | Hotswap, RGB, Audio, Hit         | &check;           |
 | xj65            | 0xAA96    | 0xAAE6                   | Hotswap, RGB, TFT                | &check;           |
 | l68             | 0xAA96    | 0xAAE7                   | Hotswap, RGB                     | &check;           |
 | rose65v2        | 0xAA96    | 0xAAE8(shadow of 0xAA88) | Hotswap, RGB                     | &check;           |
+| rs40v2          | 0xAA96    | 0xAAE9                   | Hotswap, BLE, RGB                | &check;           |
+| rsalice         | 0xAA96    | 0xAAEE                   | Hotswap, BLE, RGB                | &check;           |
+| island75        | 0xAA96    | 0xAAF0                   | Hotswap, BLE, RGB                | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
