@@ -85,3 +85,9 @@ void keyboard_post_init_kb(void) {
     debug_keyboard=true;
     debug_mouse=true;
 }
+
+
+void board_init(void) {
+    setPinInput(G10);
+    setPinInput(B8);
+}
