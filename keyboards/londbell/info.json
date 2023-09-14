@@ -1,0 +1,7 @@
+{
+    "url": "https://github.com/londbell/qmk_firmware",
+    "maintainer": "londbell",
+    "usb": {
+        "vid": "0xFEED"
+    }
+}
